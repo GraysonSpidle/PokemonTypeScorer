@@ -1,0 +1,757 @@
+{
+    "Bug": {
+        "offensive": {
+            "0.0": [],
+            "1.5": [
+                "Normal",
+                "Water",
+                "Electric",
+                "Ground",
+                "Rock",
+                "Ice",
+                "Bug",
+                "Dragon"
+            ],
+            "3.0": [
+                "Grass",
+                "Psychic",
+                "Poison"
+            ],
+            "0.75": [
+                "Fighting",
+                "Fire",
+                "Flying",
+                "Ghost"
+            ]
+        },
+        "defensive": {
+            "1.0": [
+                "Normal",
+                "Water",
+                "Electric",
+                "Psychic",
+                "Ice",
+                "Bug",
+                "Dragon",
+                "Ghost"
+            ],
+            "0.5": [
+                "Fighting",
+                "Grass",
+                "Ground"
+            ],
+            "2.0": [
+                "Fire",
+                "Flying",
+                "Rock",
+                "Poison"
+            ],
+            "0.0": []
+        }
+    },
+    "Dragon": {
+        "offensive": {
+            "0.0": [],
+            "1.5": [
+                "Normal",
+                "Fire",
+                "Fighting",
+                "Water",
+                "Flying",
+                "Grass",
+                "Electric",
+                "Ground",
+                "Psychic",
+                "Rock",
+                "Ice",
+                "Bug",
+                "Ghost",
+                "Poison"
+            ],
+            "3.0": [
+                "Dragon"
+            ],
+            "0.75": []
+        },
+        "defensive": {
+            "1.0": [
+                "Normal",
+                "Fighting",
+                "Flying",
+                "Poison",
+                "Ground",
+                "Psychic",
+                "Rock",
+                "Bug",
+                "Ghost"
+            ],
+            "0.5": [
+                "Fire",
+                "Water",
+                "Grass",
+                "Electric"
+            ],
+            "2.0": [
+                "Dragon",
+                "Ice"
+            ],
+            "0.0": []
+        }
+    },
+    "Electric": {
+        "offensive": {
+            "0.0": [
+                "Ground"
+            ],
+            "1.5": [
+                "Normal",
+                "Fire",
+                "Fighting",
+                "Poison",
+                "Psychic",
+                "Rock",
+                "Ice",
+                "Bug",
+                "Ghost"
+            ],
+            "3.0": [
+                "Water",
+                "Flying"
+            ],
+            "0.75": [
+                "Dragon",
+                "Electric",
+                "Grass"
+            ]
+        },
+        "defensive": {
+            "1.0": [
+                "Normal",
+                "Fire",
+                "Fighting",
+                "Water",
+                "Grass",
+                "Poison",
+                "Psychic",
+                "Rock",
+                "Ice",
+                "Bug",
+                "Dragon",
+                "Ghost"
+            ],
+            "0.5": [
+                "Flying",
+                "Electric"
+            ],
+            "2.0": [
+                "Ground"
+            ],
+            "0.0": []
+        }
+    },
+    "Fighting": {
+        "offensive": {
+            "0.0": [
+                "Ghost"
+            ],
+            "1.5": [
+                "Fire",
+                "Fighting",
+                "Water",
+                "Grass",
+                "Electric",
+                "Ground",
+                "Dragon"
+            ],
+            "3.0": [
+                "Normal",
+                "Rock",
+                "Ice"
+            ],
+            "0.75": [
+                "Bug",
+                "Flying",
+                "Poison",
+                "Psychic"
+            ]
+        },
+        "defensive": {
+            "1.0": [
+                "Normal",
+                "Fire",
+                "Fighting",
+                "Water",
+                "Grass",
+                "Poison",
+                "Electric",
+                "Ground",
+                "Ice",
+                "Dragon",
+                "Ghost"
+            ],
+            "0.5": [
+                "Rock",
+                "Bug"
+            ],
+            "2.0": [
+                "Flying",
+                "Psychic"
+            ],
+            "0.0": []
+        }
+    },
+    "Fire": {
+        "offensive": {
+            "0.0": [],
+            "1.5": [
+                "Normal",
+                "Fighting",
+                "Flying",
+                "Poison",
+                "Electric",
+                "Ground",
+                "Psychic",
+                "Ghost"
+            ],
+            "3.0": [
+                "Grass",
+                "Ice",
+                "Bug"
+            ],
+            "0.75": [
+                "Dragon",
+                "Fire",
+                "Rock",
+                "Water"
+            ]
+        },
+        "defensive": {
+            "1.0": [
+                "Normal",
+                "Fighting",
+                "Flying",
+                "Poison",
+                "Electric",
+                "Psychic",
+                "Dragon",
+                "Ghost"
+            ],
+            "0.5": [
+                "Fire",
+                "Grass",
+                "Ice",
+                "Bug"
+            ],
+            "2.0": [
+                "Ground",
+                "Rock",
+                "Water"
+            ],
+            "0.0": []
+        }
+    },
+    "Flying": {
+        "offensive": {
+            "0.0": [],
+            "1.5": [
+                "Normal",
+                "Fire",
+                "Water",
+                "Flying",
+                "Poison",
+                "Ground",
+                "Psychic",
+                "Ice",
+                "Dragon",
+                "Ghost"
+            ],
+            "3.0": [
+                "Fighting",
+                "Grass",
+                "Bug"
+            ],
+            "0.75": [
+                "Electric",
+                "Rock"
+            ]
+        },
+        "defensive": {
+            "1.0": [
+                "Normal",
+                "Fire",
+                "Water",
+                "Flying",
+                "Poison",
+                "Psychic",
+                "Dragon",
+                "Ghost"
+            ],
+            "0.5": [
+                "Fighting",
+                "Grass",
+                "Bug"
+            ],
+            "2.0": [
+                "Electric",
+                "Ice",
+                "Rock"
+            ],
+            "0.0": [
+                "Ground"
+            ]
+        }
+    },
+    "Ghost": {
+        "offensive": {
+            "0.0": [
+                "Normal"
+            ],
+            "1.5": [
+                "Fire",
+                "Fighting",
+                "Water",
+                "Flying",
+                "Grass",
+                "Poison",
+                "Electric",
+                "Ground",
+                "Rock",
+                "Ice",
+                "Bug",
+                "Dragon"
+            ],
+            "3.0": [
+                "Psychic",
+                "Ghost"
+            ],
+            "0.75": []
+        },
+        "defensive": {
+            "1.0": [
+                "Fire",
+                "Water",
+                "Flying",
+                "Grass",
+                "Electric",
+                "Ground",
+                "Psychic",
+                "Rock",
+                "Ice",
+                "Dragon"
+            ],
+            "0.5": [
+                "Poison",
+                "Bug"
+            ],
+            "2.0": [
+                "Ghost"
+            ],
+            "0.0": [
+                "Normal",
+                "Fighting"
+            ]
+        }
+    },
+    "Grass": {
+        "offensive": {
+            "0.0": [],
+            "1.5": [
+                "Normal",
+                "Fighting",
+                "Electric",
+                "Psychic",
+                "Ice",
+                "Ghost"
+            ],
+            "3.0": [
+                "Water",
+                "Ground",
+                "Rock"
+            ],
+            "0.75": [
+                "Bug",
+                "Dragon",
+                "Fire",
+                "Flying",
+                "Grass",
+                "Poison"
+            ]
+        },
+        "defensive": {
+            "1.0": [
+                "Normal",
+                "Fighting",
+                "Psychic",
+                "Rock",
+                "Dragon",
+                "Ghost"
+            ],
+            "0.5": [
+                "Water",
+                "Grass",
+                "Electric",
+                "Ground"
+            ],
+            "2.0": [
+                "Bug",
+                "Fire",
+                "Flying",
+                "Ice",
+                "Poison"
+            ],
+            "0.0": []
+        }
+    },
+    "Ground": {
+        "offensive": {
+            "0.0": [
+                "Flying"
+            ],
+            "1.5": [
+                "Normal",
+                "Fighting",
+                "Water",
+                "Ground",
+                "Psychic",
+                "Ice",
+                "Dragon",
+                "Ghost"
+            ],
+            "3.0": [
+                "Fire",
+                "Poison",
+                "Electric",
+                "Rock"
+            ],
+            "0.75": [
+                "Bug",
+                "Grass"
+            ]
+        },
+        "defensive": {
+            "1.0": [
+                "Normal",
+                "Fire",
+                "Fighting",
+                "Flying",
+                "Ground",
+                "Psychic",
+                "Bug",
+                "Dragon",
+                "Ghost"
+            ],
+            "0.5": [
+                "Poison",
+                "Rock"
+            ],
+            "2.0": [
+                "Grass",
+                "Ice",
+                "Water"
+            ],
+            "0.0": [
+                "Electric"
+            ]
+        }
+    },
+    "Ice": {
+        "offensive": {
+            "0.0": [],
+            "1.5": [
+                "Normal",
+                "Fighting",
+                "Poison",
+                "Electric",
+                "Psychic",
+                "Rock",
+                "Bug",
+                "Ghost"
+            ],
+            "3.0": [
+                "Flying",
+                "Grass",
+                "Ground",
+                "Dragon"
+            ],
+            "0.75": [
+                "Fire",
+                "Ice",
+                "Water"
+            ]
+        },
+        "defensive": {
+            "1.0": [
+                "Normal",
+                "Water",
+                "Flying",
+                "Grass",
+                "Poison",
+                "Electric",
+                "Ground",
+                "Psychic",
+                "Bug",
+                "Dragon",
+                "Ghost"
+            ],
+            "0.5": [
+                "Ice"
+            ],
+            "2.0": [
+                "Fighting",
+                "Fire",
+                "Rock"
+            ],
+            "0.0": []
+        }
+    },
+    "Normal": {
+        "offensive": {
+            "0.0": [
+                "Ghost"
+            ],
+            "1.5": [
+                "Normal",
+                "Fire",
+                "Fighting",
+                "Water",
+                "Flying",
+                "Grass",
+                "Poison",
+                "Electric",
+                "Ground",
+                "Psychic",
+                "Ice",
+                "Bug",
+                "Dragon"
+            ],
+            "3.0": [],
+            "0.75": [
+                "Rock"
+            ]
+        },
+        "defensive": {
+            "1.0": [
+                "Normal",
+                "Fire",
+                "Water",
+                "Flying",
+                "Grass",
+                "Poison",
+                "Electric",
+                "Ground",
+                "Psychic",
+                "Rock",
+                "Ice",
+                "Bug",
+                "Dragon"
+            ],
+            "0.5": [],
+            "2.0": [
+                "Fighting"
+            ],
+            "0.0": [
+                "Ghost"
+            ]
+        }
+    },
+    "Poison": {
+        "offensive": {
+            "0.0": [],
+            "1.5": [
+                "Normal",
+                "Fire",
+                "Fighting",
+                "Water",
+                "Flying",
+                "Electric",
+                "Psychic",
+                "Ice",
+                "Bug",
+                "Dragon"
+            ],
+            "3.0": [
+                "Grass"
+            ],
+            "0.75": [
+                "Poison",
+                "Ground",
+                "Rock",
+                "Ghost"
+            ]
+        },
+        "defensive": {
+            "1.0": [
+                "Normal",
+                "Fire",
+                "Water",
+                "Flying",
+                "Electric",
+                "Rock",
+                "Ice",
+                "Dragon",
+                "Ghost"
+            ],
+            "0.5": [
+                "Fighting",
+                "Grass",
+                "Poison",
+                "Bug"
+            ],
+            "2.0": [
+                "Ground",
+                "Psychic"
+            ],
+            "0.0": []
+        }
+    },
+    "Psychic": {
+        "offensive": {
+            "0.0": [],
+            "1.5": [
+                "Normal",
+                "Fire",
+                "Water",
+                "Flying",
+                "Grass",
+                "Electric",
+                "Ground",
+                "Rock",
+                "Ice",
+                "Bug",
+                "Dragon",
+                "Ghost"
+            ],
+            "3.0": [
+                "Fighting",
+                "Poison"
+            ],
+            "0.75": [
+                "Psychic"
+            ]
+        },
+        "defensive": {
+            "1.0": [
+                "Normal",
+                "Fire",
+                "Water",
+                "Flying",
+                "Grass",
+                "Poison",
+                "Electric",
+                "Ground",
+                "Rock",
+                "Ice",
+                "Dragon"
+            ],
+            "0.5": [
+                "Fighting",
+                "Psychic"
+            ],
+            "2.0": [
+                "Bug",
+                "Ghost"
+            ],
+            "0.0": []
+        }
+    },
+    "Rock": {
+        "offensive": {
+            "0.0": [],
+            "1.5": [
+                "Normal",
+                "Water",
+                "Grass",
+                "Poison",
+                "Electric",
+                "Psychic",
+                "Rock",
+                "Dragon",
+                "Ghost"
+            ],
+            "3.0": [
+                "Fire",
+                "Flying",
+                "Ice",
+                "Bug"
+            ],
+            "0.75": [
+                "Fighting",
+                "Ground"
+            ]
+        },
+        "defensive": {
+            "1.0": [
+                "Electric",
+                "Psychic",
+                "Rock",
+                "Ice",
+                "Bug",
+                "Dragon",
+                "Ghost"
+            ],
+            "0.5": [
+                "Normal",
+                "Fire",
+                "Flying",
+                "Poison"
+            ],
+            "2.0": [
+                "Fighting",
+                "Grass",
+                "Ground",
+                "Water"
+            ],
+            "0.0": []
+        }
+    },
+    "Water": {
+        "offensive": {
+            "0.0": [],
+            "1.5": [
+                "Normal",
+                "Fighting",
+                "Flying",
+                "Poison",
+                "Electric",
+                "Psychic",
+                "Ice",
+                "Bug",
+                "Ghost"
+            ],
+            "3.0": [
+                "Fire",
+                "Ground",
+                "Rock"
+            ],
+            "0.75": [
+                "Dragon",
+                "Grass",
+                "Water"
+            ]
+        },
+        "defensive": {
+            "1.0": [
+                "Normal",
+                "Fighting",
+                "Flying",
+                "Poison",
+                "Ground",
+                "Psychic",
+                "Rock",
+                "Bug",
+                "Dragon",
+                "Ghost"
+            ],
+            "0.5": [
+                "Fire",
+                "Water",
+                "Ice"
+            ],
+            "2.0": [
+                "Electric",
+                "Grass"
+            ],
+            "0.0": []
+        }
+    }
+}
