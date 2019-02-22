@@ -21,9 +21,7 @@ class MatchupManager:
 
     @staticmethod
     def defaultWeights() -> tuple:
-        ''' Returns a dictionary that is structured as follows:\n 
-            Will write this part later
-        '''
+        ''' Returns a tuple containing two lambda functions that return a float. '''
         return (lambda mult: float(mult), lambda mult: float(mult))
 
     @property
@@ -49,7 +47,7 @@ class MatchupManager:
 
     @property
     def offensiveMatchupData(self) -> dict:
-        ''' Returns this type's defensive matchup data. '''
+        ''' Returns this type's offensive matchup data. '''
         return self.matchupData["offensive"]
 
     @property
@@ -72,7 +70,14 @@ class MatchupManager:
 
     def validate(self) -> None:
         ''' Validates this MatchupManager
-        It checks to make sure that both the 
+        It checks the current matchup data is valid.
+        
+        Raises
+        ------
+
+        Exception : This will be raised if there is an error in the matchup json file. 
+            - When a type does exist in the offensive matchup data but doesn't exist in the defensive matchup data and vice versa.
+            - When a type exists in multiple locations in either the offensive or defensive matchup data.
         
         '''
         offensiveMatchups = []
