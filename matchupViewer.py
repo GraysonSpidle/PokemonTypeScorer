@@ -56,7 +56,7 @@ if __name__ == "__main__":
                 name = "{0}_{1}".format(splitted[0], splitted[1].capitalize())
             
             # Starting the thread
-            thread = Thread(target=displayer, args=[allPokemonTypes[name]])
+            thread = Thread(target=displayer, args=[allPokemonTypes[name]], daemon=True)
             thread.start()
         except KeyError:
             print("Error: \"{0}\" is not a valid Pokemon type.\n".format(name))
