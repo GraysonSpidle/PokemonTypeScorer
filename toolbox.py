@@ -6,18 +6,19 @@ from pokemonType import PokemonType
 from math import floor
 
 def parseMatchupsFile(path:str) -> dict:
-    ''' Reads the matchup json file and spits out a dictionary with PokemonTypes (single types only) mapped to string representations of their names.
+    ''' Reads the matchup json file.
 
-    Parameters
-    ----------
-
-    path : str
-        The path to the matchups json file.
+    @param path: A string that represents the path to the matchups json file.
+    
+    @return: A dictionary with PokemonTypes (single types only) mapped to string representations of their names.
+    
+    @raise IOError: If something goes wrong in reading the file.
 
     '''
+
     output = {}
-    file = open(path)
-    data = json.load(file)
+    with open(path) as file:
+        data = json.load(file)
     file.close()
 
     for (typeName, matchupData) in data.items():
@@ -28,12 +29,10 @@ def parseMatchupsFile(path:str) -> dict:
 def generateAllPossibleDualTypes(pokemonTypes:list) -> list:
     ''' Generates all the possible dual-types from the provided list of single type Pokemon.
     This includes duplicates (ie. Bug_Grass and Grass_Bug).
-    
-    Parameters
-    ----------
 
-    pokemonTypes : list
-        A list of single typed PokemonTypes
+    @param pokemonTypes: A list of single type PokemonTypes
+
+    @return: Returns a list containing all possible dual-type PokemonType instance combinations.
     
     '''
     output = list()
@@ -48,19 +47,13 @@ def generateAllPossibleDualTypes(pokemonTypes:list) -> list:
 
 def getAllPokemonTypes(matchupsPath:str, duplicates:bool=False) -> dict:
     ''' Gets all the Pokemon types. Both single and dual-type Pokemon.\n
-
-    Parameters
-    ----------
-
-    matchupsPath : str
-        The path to the matchup json file.
-
-    duplicates : bool, optional
-        If this is True, then this function will include dual-types whose names are just switched around (ie. Water_Steel and Steel_Water).
-        Single types are unaffected.
-
     
-    Returns a dictionary with the PokemonType's name (string) as the key and the PokemonType object as the value.
+    @param matchupsPath: The path to the matchup json file.
+
+    @param duplicates: If this is True, then this function will include dual-types whose names are just switched around (ie. Water_Steel and Steel_Water).
+    Single types are unaffected.
+
+    @return: A dictionary with the PokemonType's name (string) as the key and the PokemonType object as the value.
     '''
 
     singleTypes = parseMatchupsFile(matchupsPath)

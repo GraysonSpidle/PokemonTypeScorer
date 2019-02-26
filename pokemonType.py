@@ -11,28 +11,18 @@ class PokemonType(MatchupManager):
     because you can go the beginning of the very first Pokemon game and prove me wrong. As a result, any data that originated
     from any offensive type matchup datasets inherits this assumption and the results should not be taken seriously.
 
-    Note: In the documentation for MatchupType I chose my words meticulously to clearly portray what the data means. 
-    When I was addressing the attacking type, I called it the "move type" and the "Pokemon type" when I was addressing the defending type.
-    This is an important distinction, because moves cannot be dual-type whereas Pokemon can.
-
     '''
 
     @staticmethod
     def combineMatchupData(type1:MatchupManager, type2:MatchupManager) -> tuple:
         ''' Combines the matchup data of two single type MatchupManager objects resulting in a dual-type.\n
 
-        Parameters
-        ----------
+        @param type1: The first type to use when creating the new dual-type. This cannot be a dual-type.
+        @param type2: The second type to use when creating the new dual-type. This cannot be a dual-type.
 
-        type1 : MatchupManager
-            The first type to use when creating the new dual-type. This cannot be a dual-type.
+        @return: A tuple containing the offensive and defensive matchup data.
 
-        type2 : MatchupManager
-            The second type to use when creating the new dual-type. This cannot be a dual-type.
-
-        Returns
-        -------
-        a tuple containing offensive and defensive matchup data.
+        @raise ValidationError: If either of the two types are invalid.
 
         '''
 
@@ -81,22 +71,14 @@ class PokemonType(MatchupManager):
         2. PokemonType(name,type1,type2): This is the dual-type constructor\n
         Failure to choose one of these will result in a thrown exception. If both are selected, then this method will choose
         the first constructor
+
+        @param name: This is a string that is the name of the Pokemon type.
+
+        @param matchupData: A dict of Matchup instances that describe this PokemonType's matchups. For ease of access this method indexes
+        all the Matchup instances by their MatchupType. If you use this parameter, then the PokemonType will be single type.
         
-        Parameters
-        ----------
-
-        name : str
-            This is a string that is the name of the Pokemon type.
-
-        matchupData : dict, optional
-            A dict of Matchup instances that describe this PokemonType's matchups. For ease of access this method indexes
-            all the Matchup instances by their MatchupType. If you use this parameter, then the PokemonType will be single type.
-        
-        type1 : MatchupManager, optional
-            A MatchupManager that represents the dual-type's first type.
-
-        type2 : MatchupManager, optional
-            A MatchupManager that represents the dual-type's second type.
+        @param type1: A MatchupManager that represents the dual-type's first type.
+        @param type2: A MatchupManager that represents the dual-type's second type.
         '''
         self._name = name
         self._isDualType = False

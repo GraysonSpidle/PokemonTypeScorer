@@ -1,4 +1,5 @@
 from tkinter import Tk, Label, Y, N, LEFT, RIGHT, TOP, Grid, N, NW
+from errors import ValidationError
 import json
 
 class MatchupManager:
@@ -57,27 +58,21 @@ class MatchupManager:
 
     def getMultipliers(self, typeName:str) -> tuple:
         offensiveMultiplier, defensiveMultiplier = None, None
-        for (multiplier, names) in self.offensiveMatchupData.items():
+        for (multiplier_str, names) in self.offensiveMatchupData.items():
             if typeName in names:
-                offensiveMultiplier = multiplier
+                offensiveMultiplier = float(multiplier_str)
                 break
-        for (multiplier, names) in self.defensiveMatchupData.items():
+        for (multiplier_str, names) in self.defensiveMatchupData.items():
             if typeName in names:
-                defensiveMultiplier = multiplier
+                defensiveMultiplier = float(multiplier_str)
                 break
         return (offensiveMultiplier, defensiveMultiplier)
 
 
     def validate(self) -> None:
-        ''' Validates this MatchupManager
-        It checks the current matchup data is valid.
+        ''' Validates this MatchupManager.
         
-        Raises
-        ------
-
-        Exception : This will be raised if there is an error in the matchup json file. 
-            - When a type does exist in the offensive matchup data but doesn't exist in the defensive matchup data and vice versa.
-            - When a type exists in multiple locations in either the offensive or defensive matchup data.
+        @raise ValidationError: If this MatchupManager isn't valid
         
         '''
         offensiveMatchups = []
@@ -90,35 +85,50 @@ class MatchupManager:
         for matchup in offensiveMatchups:
             count = defensiveMatchups.count(matchup)
             if count == 0:
-                raise Exception("Invalid MatchupManager ({0}): {1} doesn't exist in the defensive matchups.".format(self.name, matchup))
+                raise ValidationError("\"{1}\" doesn't exist in \"{0}\" defensive matchup data.".format(self.name, matchup))
             elif count > 1:
-                raise Exception("Invalid MatchupManager ({0}): {1} exists in multiple locations in the defensive matchups.".format(self.name, matchup))
+                raise ValidationError("\"{1}\" exists in multiple locations in \"{0}\" defensive matchup data.".format(self.name, matchup))
         for matchup in defensiveMatchups:
             count = offensiveMatchups.count(matchup)
             if count == 0:
-                raise Exception("Invalid MatchupManager ({0}): {1} doesn't exist in the offensive matchups.".format(self.name, matchup))
+                raise ValidationError("\"{1}\" doesn't exist in \"{0}\" offensive matchup data.".format(self.name, matchup))
             elif count > 1:
-                raise Exception("Invalid MatchupManager ({0}): {1} exists in multiple locations in the offensive matchups.".format(self.name, matchup))
+                raise ValidationError("\"{1}\" exists in multiple locations in \"{0}\" offensive matchup data.".format(self.name, matchup))
 
     def rate(self, *args, **kwargs) -> float:
-        self.validate()
+        ''' Rates this MatchupManager instance. Implementations may overload this function. 
+
+        @param weights A tuple that contains 2 callables that take in a float representing the multiplier and output a float representing the corresponding weight.
+        The first callable is the offensive weight function and the second is the defensive weight function.
+
+        @return: A float that represents this MatchupManager's score.
+
+        @raise ValidationError: If this MatchupManager isn't valid.
+        
+        '''
+
+        self.validate() # Make sure this instance is valid
+
+        # Getting the weight functions from the keywords parameter
         offensiveWeightFunc, defensiveWeightFunc = kwargs["weights"] if "weights" in kwargs.keys() else MatchupManager.defaultWeights()
+
+        # Compiling a list of all the type names
         allTypeNames = []
         for typeNames in self.offensiveMatchupData.values():
             allTypeNames += typeNames
-        numOfTypes = len(allTypeNames)
+        numOfTypes = len(allTypeNames) # Find how many there are too
 
-        output = 0
+        output = 0 # Initializing the output variable
 
+        # Iterating through all the the type names and evaluating their matchup relationship with the current MatchupManager.
         for typeName in allTypeNames:
             offensiveMultiplier, defensiveMultiplier = self.getMultipliers(typeName)
             offensiveWeight, defensiveWeight = offensiveWeightFunc(offensiveMultiplier), defensiveWeightFunc(defensiveMultiplier)
             
-            if offensiveMultiplier == '0.0':
-                output += offensiveWeight * 0.25
-            else:
-                output += offensiveWeight * 0.25 + (1/float(offensiveMultiplier)) * (1 / numOfTypes)
-            output += defensiveWeight * 0.25 + (float(defensiveMultiplier) * (1 / numOfTypes))
+            base_score = 0.5/numOfTypes # When the offensive and defensive weights are always 1, the overall score for this type would be 1.
+
+            output += base_score * offensiveWeight
+            output += base_score * defensiveWeight
 
         return output
 
@@ -130,10 +140,12 @@ class MatchupManager:
 
         colors = MatchupManager.colors() # Load the colors
 
+        # Creating the title label
         titleLabel = Label(root, text=self.name, background="white")
-        titleLabel.grid(row=0, column=0, columnspan=5)
+        titleLabel.grid(row=0, column=0, columnspan=5) # This will span the entire grid
 
         def createMatchupDataLabels(items:list, columns:tuple):
+            ''' A generalized function that creates tkinter labels and places them in their designated rows. '''
             rowNumber = 2
             for (multiplier_str, typeNames) in items:
                 if len(typeNames) == 0:
@@ -147,14 +159,17 @@ class MatchupManager:
                     lbl.grid(row=rowNumber, column=columns[1])
                     rowNumber += 1
 
+        # Offensive Data
         offensiveTitleLabel = Label(root, text="Offensive", background="white")
         offensiveTitleLabel.grid(row=1, column=0, columnspan=2, sticky=N)
 
         createMatchupDataLabels(sorted(self.offensiveMatchupData.items(), key=lambda item: float(item[0]), reverse=True), (0,1))      
         
+        # Defensive Data
         defensiveTitleLabel = Label(root, text="Defensive", background="white")
         defensiveTitleLabel.grid(row=1, column=3, columnspan=2, sticky=N)
 
         createMatchupDataLabels(sorted(self.defensiveMatchupData.items(), key=lambda item: float(item[0])), (3,4))
         
+        # Displaying the window
         root.mainloop()
