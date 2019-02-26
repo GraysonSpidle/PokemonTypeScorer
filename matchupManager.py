@@ -91,13 +91,13 @@ class MatchupManager:
             count = defensiveMatchups.count(matchup)
             if count == 0:
                 raise Exception("Invalid MatchupManager ({0}): {1} doesn't exist in the defensive matchups.".format(self.name, matchup))
-            elif count < 1:
+            elif count > 1:
                 raise Exception("Invalid MatchupManager ({0}): {1} exists in multiple locations in the defensive matchups.".format(self.name, matchup))
         for matchup in defensiveMatchups:
             count = offensiveMatchups.count(matchup)
             if count == 0:
                 raise Exception("Invalid MatchupManager ({0}): {1} doesn't exist in the offensive matchups.".format(self.name, matchup))
-            elif count < 1:
+            elif count > 1:
                 raise Exception("Invalid MatchupManager ({0}): {1} exists in multiple locations in the offensive matchups.".format(self.name, matchup))
 
     def rate(self, *args, **kwargs) -> float:
@@ -117,7 +117,7 @@ class MatchupManager:
             if offensiveMultiplier == '0.0':
                 output += offensiveWeight * 0.25
             else:
-                output += offensiveWeight * 0.25 + (1/float(offensiveMultiplier) * (1 / numOfTypes))
+                output += offensiveWeight * 0.25 + (1/float(offensiveMultiplier)) * (1 / numOfTypes)
             output += defensiveWeight * 0.25 + (float(defensiveMultiplier) * (1 / numOfTypes))
 
         return output
