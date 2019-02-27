@@ -1,6 +1,7 @@
 from sys import argv
 from pokemonType import PokemonType
 import toolbox
+from math import e
 
 # ====================
 #     COMMAND LINE
@@ -16,7 +17,7 @@ else:
 # ====================
 def offensiveWeightFunc(multiplier:float) -> float:
     equation1 = lambda mult: (mult - 1.5)**(2) + 1
-    equation2 = lambda mult: -(-mult + 1.5)**(3/2) - 1
+    equation2 = lambda mult: -(2.2*(1.5-mult)**0.5)-(0.5*mult)-0.25
     return equation2(multiplier) if multiplier < 1.5 else equation1(multiplier)
 
 def defensiveWeightFunc(multiplier:float) -> float:
@@ -48,7 +49,9 @@ def printRatings(ratings:dict) -> None:
 def rateTypes(pokemonTypes:dict) -> dict:
     ratings = {}
     for (name, pokemonType) in pokemonTypes.items():
-        ratings[name] = pokemonType.rate(weights=(offensiveWeightFunc,defensiveWeightFunc))
+        scores = pokemonType.rate(weights=(offensiveWeightFunc,defensiveWeightFunc))
+        print(name, scores)
+        ratings[name] = sum(scores)
 
     ratings = dict(sorted(ratings.items(), key=lambda item: item[1])) # Sort from worst type to best type
     normalize(ratings)
@@ -56,14 +59,19 @@ def rateTypes(pokemonTypes:dict) -> dict:
 
 def rateAgain(pokemonType:PokemonType, ratings:dict) -> float:
     output = 0
-    for (multiplier_str, typeNames) in pokemonType.offensiveMatchupData.items():
-        weight = offensiveWeightFunc(float(multiplier_str))
-        for typeName in typeNames:
-            output += weight * ratings[typeName]
-    for (multiplier_str, typeNames) in pokemonType.defensiveMatchupData.items():
-        weight = defensiveWeightFunc(float(multiplier_str))
-        for typeName in typeNames:
-            output += weight * ratings[typeName]
+
+    def genericCalculator(matchupData:dict, weightFunc:callable) -> float:
+        local_output = 0
+        for (multiplier_str, typeNames) in matchupData.items():
+            weight = weightFunc(float(multiplier_str))
+            for typeName in typeNames:
+                local_output += weight * ratings[typeName]
+
+        return local_output
+    
+    output += genericCalculator(pokemonType.offensiveMatchupData, offensiveWeightFunc)
+    output += genericCalculator(pokemonType.defensiveMatchupData, defensiveWeightFunc)
+
     return output
 
 def rateTypesAgain(originalRatings:dict, pokemonTypes:dict) -> dict:
@@ -80,10 +88,10 @@ def rateTypesAgain(originalRatings:dict, pokemonTypes:dict) -> dict:
 pokemonTypes = toolbox.getAllPokemonTypes(matchupsPath) # Get all pokemon types
 
 ratings = rateTypes(pokemonTypes) # These are the ratings in a vaccuum.
-# printRatings(ratings)
+printRatings(ratings)
 
 # Now we're going to reward types that are resistant to types that have high ratings and penalize the types that are weak to types with high ratings.
 # Similarly, we'll also reward types that are strong against highly rated types and penalize types that are weak against highly rated types.
 
-newRatings = rateTypesAgain(ratings, pokemonTypes)
-printRatings(newRatings)
+# newRatings = rateTypesAgain(ratings, pokemonTypes)
+# printRatings(newRatings)

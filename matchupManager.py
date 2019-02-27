@@ -95,13 +95,11 @@ class MatchupManager:
             elif count > 1:
                 raise ValidationError("\"{1}\" exists in multiple locations in \"{0}\" offensive matchup data.".format(self.name, matchup))
 
-    def rate(self, *args, **kwargs) -> float:
+    def rate(self, *args, **kwargs):
         ''' Rates this MatchupManager instance. Implementations may overload this function. 
 
         @param weights A tuple that contains 2 callables that take in a float representing the multiplier and output a float representing the corresponding weight.
         The first callable is the offensive weight function and the second is the defensive weight function.
-
-        @return: A float that represents this MatchupManager's score.
 
         @raise ValidationError: If this MatchupManager isn't valid.
         
@@ -116,21 +114,21 @@ class MatchupManager:
         allTypeNames = []
         for typeNames in self.offensiveMatchupData.values():
             allTypeNames += typeNames
-        numOfTypes = len(allTypeNames) # Find how many there are too
 
-        output = 0 # Initializing the output variable
+        offensiveScore = 0
+        defensiveScore = 0
 
         # Iterating through all the the type names and evaluating their matchup relationship with the current MatchupManager.
         for typeName in allTypeNames:
             offensiveMultiplier, defensiveMultiplier = self.getMultipliers(typeName)
             offensiveWeight, defensiveWeight = offensiveWeightFunc(offensiveMultiplier), defensiveWeightFunc(defensiveMultiplier)
             
-            base_score = 0.5/numOfTypes # When the offensive and defensive weights are always 1, the overall score for this type would be 1.
+            base_score = 1
 
-            output += base_score * offensiveWeight
-            output += base_score * defensiveWeight
+            offensiveScore += base_score * offensiveWeight
+            defensiveScore += base_score * defensiveWeight
 
-        return output
+        return (offensiveScore, defensiveScore)
 
     def display(self) -> None:
         ''' Displays a primitive visual representation of this object's matchup data. '''
