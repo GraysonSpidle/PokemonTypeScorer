@@ -12,6 +12,8 @@ This was written in Python 3.6.8 and I don't intend on making it compatible with
 ## Usage
 You'll find a Python script titled `main.py` that is set up to print out the ratings. You are welcome to change the weight functions in `main.py` and/or change the `rate(self, *args, **kwargs)` function which can be found in `matchupManager.py`.
 
+You can also execute the `matchupView.py` file for a much easier matchup viewing experience. Though, there is still much to be desired.
+
 ## Generation VII Results
 In case you don't want to download the source code to just see my results for Generation VII, here they are: 
 
