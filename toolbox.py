@@ -4,6 +4,7 @@ import json
 from matchupManager import MatchupManager
 from pokemonType import PokemonType
 from math import floor
+from itertools import permutations, combinations, takewhile
 
 def parseMatchupsFile(path:str) -> dict:
     ''' Reads the matchup json file.
@@ -26,23 +27,20 @@ def parseMatchupsFile(path:str) -> dict:
 
     return output
 
-def generateAllPossibleDualTypes(pokemonTypes:list) -> list:
+def generateAllPossibleDualTypes(pokemonTypes:list, duplicates:bool=False) -> list:
     ''' Generates all the possible dual-types from the provided list of single type Pokemon.
-    This includes duplicates (ie. Bug_Grass and Grass_Bug).
 
     @param pokemonTypes: A list of single type PokemonTypes
+    @param duplicates: If True, this method will includes duplicates (ie. Bug_Grass and Grass_Bug).
 
     @return: Returns a list containing all possible dual-type PokemonType instance combinations.
     
     '''
     output = list()
-    for firstType in pokemonTypes:
-        if not firstType.isDualType:
-            for secondType in pokemonTypes:
-                if firstType is secondType or secondType.isDualType:
-                    continue
-                new_name = "{0}_{1}".format(firstType.name, secondType.name)
-                output.append(PokemonType(name=new_name, type1=firstType, type2=secondType))
+    pairs = permutations(pokemonTypes, 2) if duplicates else combinations(pokemonTypes, 2)
+    for (type1, type2) in takewhile(lambda pair: not pair[0].isDualType and not pair[1].isDualType, pairs): # Only take single types
+        new_name = "{0}_{1}".format(type1.name, type2.name)
+        output.append(PokemonType(name=new_name, type1=type1, type2=type2))
     return output
 
 def getAllPokemonTypes(matchupsPath:str, duplicates:bool=False) -> dict:
@@ -57,18 +55,7 @@ def getAllPokemonTypes(matchupsPath:str, duplicates:bool=False) -> dict:
     '''
 
     singleTypes = parseMatchupsFile(matchupsPath)
-    dualTypes = generateAllPossibleDualTypes(singleTypes.values())
-    output = singleTypes
+    dualTypes = generateAllPossibleDualTypes(singleTypes.values(), duplicates)
 
-    def _switchTypeName(typeName:str) -> str:
-        split = typeName.split("_")
-        return "{0}_{1}".format(split[1], split[0])
-
-    for pokemonType in dualTypes:
-        if pokemonType.isDualType and not duplicates: # Checking for duplicates
-            if not _switchTypeName(pokemonType.name) in output.keys():
-                output[pokemonType.name] = pokemonType
-        else:
-            output[pokemonType.name] = pokemonType
-    return output
+    return singleTypes + dualTypes
 
