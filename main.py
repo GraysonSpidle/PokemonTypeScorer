@@ -2,6 +2,7 @@ from sys import argv
 from pokemonType import PokemonType
 import toolbox
 from math import e
+from formulas import *
 
 # ====================
 #     COMMAND LINE
@@ -11,19 +12,6 @@ if len(argv) > 1:
     matchupsPath = str(argv[1])
 else:
     matchupsPath = "gen-vii-type-matchups.json"
-
-# ====================
-#   WEIGHT FUNCTIONS
-# ====================
-def offensiveWeightFunc(multiplier:float) -> float:
-    equation1 = lambda mult: (mult - 1.5)**(2) + 1
-    equation2 = lambda mult: -(2.2*(1.5-mult)**0.5)-(0.5*mult)-0.25
-    return equation2(multiplier) if multiplier < 1.5 else equation1(multiplier)
-
-def defensiveWeightFunc(multiplier:float) -> float:
-    equation1 = lambda mult: -(mult - 1)**(3/2) - 1
-    equation2 = lambda mult: (-mult + 1)**(2/3) + 1
-    return equation2(multiplier) if multiplier < 1 else equation1(multiplier)
 
 # ====================
 #  UTILITY FUNCTIONS
@@ -50,7 +38,6 @@ def rateTypes(pokemonTypes:dict) -> dict:
     ratings = {}
     for (name, pokemonType) in pokemonTypes.items():
         scores = pokemonType.rate(weights=(offensiveWeightFunc,defensiveWeightFunc))
-        print(name, scores)
         ratings[name] = sum(scores)
 
     ratings = dict(sorted(ratings.items(), key=lambda item: item[1])) # Sort from worst type to best type
@@ -88,10 +75,10 @@ def rateTypesAgain(originalRatings:dict, pokemonTypes:dict) -> dict:
 pokemonTypes = toolbox.getAllPokemonTypes(matchupsPath) # Get all pokemon types
 
 ratings = rateTypes(pokemonTypes) # These are the ratings in a vaccuum.
-printRatings(ratings)
+# printRatings(ratings)
 
 # Now we're going to reward types that are resistant to types that have high ratings and penalize the types that are weak to types with high ratings.
 # Similarly, we'll also reward types that are strong against highly rated types and penalize types that are weak against highly rated types.
 
-# newRatings = rateTypesAgain(ratings, pokemonTypes)
-# printRatings(newRatings)
+newRatings = rateTypesAgain(ratings, pokemonTypes)
+printRatings(newRatings)

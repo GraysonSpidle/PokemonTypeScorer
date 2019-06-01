@@ -6,24 +6,24 @@ from pokemonType import PokemonType
 from math import floor
 from itertools import permutations, combinations, takewhile
 
-def parseMatchupsFile(path:str) -> dict:
+def parseMatchupsFile(path:str) -> list:
     ''' Reads the matchup json file.
 
     @param path: A string that represents the path to the matchups json file.
     
-    @return: A dictionary with PokemonTypes (single types only) mapped to string representations of their names.
+    @return: A list with every single Pokemon type
     
     @raise IOError: If something goes wrong in reading the file.
 
     '''
 
-    output = {}
+    output = []
     with open(path) as file:
         data = json.load(file)
     file.close()
 
     for (typeName, matchupData) in data.items():
-        output[typeName] = PokemonType(name=typeName, matchupData=matchupData)
+        output.append(PokemonType(name=typeName, matchupData=matchupData))
 
     return output
 
@@ -36,7 +36,7 @@ def generateAllPossibleDualTypes(pokemonTypes:list, duplicates:bool=False) -> li
     @return: Returns a list containing all possible dual-type PokemonType instance combinations.
     
     '''
-    output = list()
+    output = []
     pairs = permutations(pokemonTypes, 2) if duplicates else combinations(pokemonTypes, 2)
     for (type1, type2) in takewhile(lambda pair: not pair[0].isDualType and not pair[1].isDualType, pairs): # Only take single types
         new_name = "{0}_{1}".format(type1.name, type2.name)
@@ -55,7 +55,7 @@ def getAllPokemonTypes(matchupsPath:str, duplicates:bool=False) -> dict:
     '''
 
     singleTypes = parseMatchupsFile(matchupsPath)
-    dualTypes = generateAllPossibleDualTypes(singleTypes.values(), duplicates)
+    dualTypes = generateAllPossibleDualTypes(singleTypes, duplicates)
 
-    return singleTypes + dualTypes
+    return dict(map(lambda pokemonType: (pokemonType.name, pokemonType), (singleTypes + dualTypes)))
 
