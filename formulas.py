@@ -1,3 +1,5 @@
+''' Houses formulas and a function to graph them too (for convenience). '''
+
 import matplotlib.pyplot as plt
 from numpy import arange, vectorize
 

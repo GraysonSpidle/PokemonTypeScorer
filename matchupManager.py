@@ -1,18 +1,20 @@
+''' Houses the MatchupManager class. '''
+
 from tkinter import Tk, Label, Y, N, LEFT, RIGHT, TOP, Grid, N, NW
 from errors import ValidationError
 import json
 
 class MatchupManager:
-    ''' This is the class that manages Matchups (wow). It's primary use is to serve as an abstract class
-    to provide the framework needed to rate types and Pokemon based on their type matchups. In essence, this
+    ''' This is the class that manages Matchups (wow). Its primary purpose is to provide the framework 
+    needed to rate types and Pokemon based on their type matchups. In essence, this
     class encapsulates a number of dictionaries and provides a standard way of accessing them. It also
     adds some convenience methods.
 
-    The dictionary that each instance contain are structured as follows:
+    The dictionary that each instance encapsulates is structured as follows:
         key : str
             The key is either "offensive" or "defensive".
         value : dict
-            Another dict of multipliers and a list PokemonType names.
+            A dictionary of multipliers (strings) mapped to lists of PokemonType names (strings).
     
     '''
 
@@ -57,6 +59,10 @@ class MatchupManager:
         return self.matchupData["defensive"]
 
     def getMultipliers(self, typeName:str) -> tuple:
+        ''' Gets offensive and defensive multipliers this type has in relation to the given type's name.
+
+        @return: Returns a tuple containing two floats which represent the offensive and defensive multipliers respectively.
+        '''
         offensiveMultiplier, defensiveMultiplier = None, None
         for (multiplier_str, names) in self.offensiveMatchupData.items():
             if typeName in names:
@@ -95,7 +101,7 @@ class MatchupManager:
             elif count > 1:
                 raise ValidationError("\"{1}\" exists in multiple locations in \"{0}\" offensive matchup data.".format(self.name, matchup))
 
-    def rate(self, *args, **kwargs):
+    def rate(self, *args, **kwargs) -> tuple:
         ''' Rates this MatchupManager instance. Implementations may overload this function. 
 
         @param weights A tuple that contains 2 callables that take in a float representing the multiplier and output a float representing the corresponding weight.
@@ -118,7 +124,7 @@ class MatchupManager:
         offensiveScore = 0
         defensiveScore = 0
 
-        # Iterating through all the the type names and evaluating their matchup relationship with the current MatchupManager.
+        # Iterating through all the type names and evaluating their matchup relationship with the current MatchupManager.
         for typeName in allTypeNames:
             offensiveMultiplier, defensiveMultiplier = self.getMultipliers(typeName)
             offensiveWeight, defensiveWeight = offensiveWeightFunc(offensiveMultiplier), defensiveWeightFunc(defensiveMultiplier)
@@ -131,7 +137,7 @@ class MatchupManager:
         return (offensiveScore, defensiveScore)
 
     def display(self) -> None:
-        ''' Displays a primitive visual representation of this object's matchup data. '''
+        ''' Displays a primitive visual representation of this object's matchup data. This is just for convenience.'''
         root = Tk()
         root.title(self.name)
         root.configure(background="white")

@@ -22,6 +22,7 @@ class PokemonType(MatchupManager):
 
         @return: A tuple containing the offensive and defensive matchup data.
 
+        @raise PokemonTypeComboError: If either of the two types are dual-types. 
         @raise ValidationError: If either of the two types are invalid.
 
         '''
@@ -47,12 +48,15 @@ class PokemonType(MatchupManager):
         #       WHERE THE MAGIC HAPPENS
         # ====================================
         for typeName in allTypeNames:
-            type1Multipliers = type1.getMultipliers(typeName)
-            type2Multipliers = type2.getMultipliers(typeName)
+            # Get the multipliers
+            type1Multipliers = type1.getMultipliers(typeName) # [0] is offensive, [1] is defensive
+            type2Multipliers = type2.getMultipliers(typeName) # [0] is offensive, [1] is defensive
 
+            # Logic
             offensiveMultiplier = str(max(float(type1Multipliers[0]), float(type2Multipliers[0])))
             defensiveMultiplier = str(float(type1Multipliers[1]) * float(type2Multipliers[1]))
 
+            # Ensuring the new matchup data has the key we are assigning values to
             if not offensiveMultiplier in newOffensiveMatchupData.keys():
                 newOffensiveMatchupData[offensiveMultiplier] = []
             if not defensiveMultiplier in newDefensiveMatchupData.keys():
@@ -74,8 +78,8 @@ class PokemonType(MatchupManager):
 
         @param name: This is a string that is the name of the Pokemon type.
 
-        @param matchupData: A dict of Matchup instances that describe this PokemonType's matchups. For ease of access this method indexes
-        all the Matchup instances by their MatchupType. If you use this parameter, then the PokemonType will be single type.
+        @param matchupData: A dict of Matchup instances that describe this PokemonType's matchups. For ease of access, this method indexes
+        all the Matchup instances by their MatchupType. If you use this parameter, then the constructed PokemonType will be a single type.
         
         @param type1: A MatchupManager that represents the dual-type's first type.
         @param type2: A MatchupManager that represents the dual-type's second type.
@@ -112,13 +116,17 @@ class PokemonType(MatchupManager):
 
     @property
     def firstType(self) -> MatchupManager:
-        ''' A MatchupManager that represents this PokemonType's first type. '''
+        ''' A MatchupManager that represents this PokemonType's first type.\n
+        If `isDualType` is `False`, this property will be this PokemonType instance.\n
+        If `isDualType` is `True`, this property will be the first type given when this object was constructed.
+        '''
         return self._type1
 
     @property
     def secondType(self) -> MatchupManager:
-        ''' A MatchupManager that represents this PokemonType's second type.
-        This will be None if isDualType is False.
+        ''' A MatchupManager that represents this PokemonType's second type.\n
+        If `isDualType` is `False`, this property will be `None`.\n
+        If `isDualType` is `True`, this property will be the second type given when this object was constructed.
         '''
         return self._type2
 

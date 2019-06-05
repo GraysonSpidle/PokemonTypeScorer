@@ -30,15 +30,18 @@ def parseMatchupsFile(path:str) -> list:
 def generateAllPossibleDualTypes(pokemonTypes:list, duplicates:bool=False) -> list:
     ''' Generates all the possible dual-types from the provided list of single type Pokemon.
 
-    @param pokemonTypes: A list of single type PokemonTypes
-    @param duplicates: If True, this method will includes duplicates (ie. Bug_Grass and Grass_Bug).
+    @param pokemonTypes: A list of single type PokemonTypes. Cannot be `None`.\n
+    @param duplicates: If `True`, this method will includes duplicates (ie. Bug_Grass and Grass_Bug).
 
     @return: Returns a list containing all possible dual-type PokemonType instance combinations.
     
     '''
+    if pokemonTypes is None:
+        raise Exception("pokemonTypes cannot be None. You dummy.")
+
     output = []
     pairs = permutations(pokemonTypes, 2) if duplicates else combinations(pokemonTypes, 2)
-    for (type1, type2) in takewhile(lambda pair: not pair[0].isDualType and not pair[1].isDualType, pairs): # Only take single types
+    for (type1, type2) in takewhile(lambda pair: not pair[0].isDualType and not pair[1].isDualType, pairs): # Only take pairs that consist of only single types
         new_name = "{0}_{1}".format(type1.name, type2.name)
         output.append(PokemonType(name=new_name, type1=type1, type2=type2))
     return output

@@ -1,21 +1,22 @@
 # PokemonTypeScorer
-This project was inspired by GameFreak's Pokemon games that debuted in the 90s. If you haven't played them, I highly recommend that you do. Anyway, I grew up playing these games and still do to this day. The idea for this program spawned from a question I consistently ask myself: what is the best Pokemon type in this game? So this program is an attempt to rate all Pokemon types based on a given generation. I did this to practice my programming skills and answer a question I've asked myself for a long time.
+This project was inspired by GameFreak's Pokemon games that debuted in the 90s. If you haven't played them, I highly recommend that you do. Anyway, I grew up playing these games and still do to this day. The idea for this program spawned from a question I constantly asked myself: what is the best Pokemon type in this game? So this program is an attempt to rate all Pokemon types based on a given generation. I had written something similar in Java a while ago and wanted to learn Python so I translated the code.
 
-PS: My favorite type is Normal. Snorlax and Slacking FTW!
+**PS:** My favorite type is Normal. Snorlax and Slacking FTW! Misdreavus is a close second.
 
 ## Installation
-Just download the source code and you're good.
-It does rely on the `json` and `tkinter` modules, which I believe come standard with Python. If not, they'll likely be made available with `pip install`
+Just download the source code and you're good. It is worth noting that you'll need some programming experience to get the most out of this. All I've done here is set up the logistical framework that you can build upon.
+The program does rely on the `json` and `tkinter` modules, which I believe come standard with Python. If not, they'll likely be made available with the `pip install` command.
 
 This was written in Python 3.6.8 and I don't intend on making it compatible with Python 2. 
 
 ## Usage
 You'll find a Python script titled `main.py` that is set up to print out the ratings. You are welcome to change the weight functions in `main.py` and/or change the `rate(self, *args, **kwargs)` function which can be found in `matchupManager.py`.
 
-You can also execute the `matchupView.py` file for a much easier matchup viewing experience. Though, there is still much to be desired.
+You can also execute the `matchupView.py` file for a much easier matchup viewing experience. Though, there is still much to be desired. 
+`matchupView.py` can be launched from the command line for slightly more flexibility.
 
 ## Generation VII Results
-In case you don't want to download the source code to just see my results for Generation VII, here they are: 
+In case you don't want to download the source code to just see my results (worst to best) for Generation VII, here they are: 
 
 |Type Name|Rating|
 |:--------|-----:|

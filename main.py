@@ -1,23 +1,27 @@
+''' The main script that does the calculations. '''
+
 from sys import argv
 from pokemonType import PokemonType
-import toolbox
 from math import e
-from formulas import *
+from formulas import offensiveWeightFunc, defensiveWeightFunc
+
+import toolbox
 
 # ====================
 #     COMMAND LINE
 # ====================
-
 if len(argv) > 1:
     matchupsPath = str(argv[1])
 else:
-    matchupsPath = "gen-vii-type-matchups.json"
+    matchupsPath = "matchup_data/gen-vii.json"
 
 # ====================
 #  UTILITY FUNCTIONS
 # ====================
-def normalize(data:dict):
-    ''' Normalizes the data '''
+def normalize(data:dict) -> None:
+    ''' Normalizes the data.
+    Puts all the data on a scale between 0 and 1.
+    '''
     toAdd = float(list(data.items())[0][1])
     toAdd *= -1 if toAdd < 0 else 1
     for name in data.keys():

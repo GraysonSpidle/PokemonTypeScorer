@@ -15,7 +15,7 @@ import toolbox
 if len(argv) > 1:
     matchupsPath = str(argv[1])
 else:
-    matchupsPath = "gen-vii-type-matchups.json"
+    matchupsPath = "matchup_data/gen-vii.json"
 
 
 # ====================
