@@ -2,18 +2,25 @@
 
 import matplotlib.pyplot as plt
 from numpy import arange, vectorize
+from math import e
 
-def offensiveWeightFunc(multiplier:float) -> float:
+def offensivePiecewiseWeightFunc(multiplier:float) -> float:
     equation1 = lambda mult: (mult - 1.5)**(2) + 1
     equation2 = lambda mult: -(2.2*(1.5-mult)**0.5)-(0.5*mult)-0.25
     return equation2(multiplier) if multiplier < 1.5 else equation1(multiplier)
 
-def defensiveWeightFunc(multiplier:float) -> float:
+def defensivePiecewiseWeightFunc(multiplier:float) -> float:
     equation1 = lambda mult: -(mult - 1)**(3/2) - 1
     equation2 = lambda mult: (-mult + 1)**(2/3) + 1
     return equation2(multiplier) if multiplier < 1 else equation1(multiplier)
 
-def display():
+def offensiveSigmoidFunc(multiplier:float) -> float:
+    return -15*(1+e**(multiplier-1.5))**(-1)+7.5
+
+def defensiveSigmoidFunc(multiplier:float) -> float:
+    return 15*(1+e**(multiplier-1))**(-1)-7.5
+
+def display(offensiveWeightFunc:callable, defensiveWeightFunc:callable):
     x = arange(0,1.5,0.1)
     y = vectorize(offensiveWeightFunc)(x)
     offensive_lines = plt.plot(x,y,'b',label="Offensive")

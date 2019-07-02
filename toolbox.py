@@ -5,6 +5,7 @@ from matchupManager import MatchupManager
 from pokemonType import PokemonType
 from math import floor
 from itertools import permutations, combinations, takewhile
+from os import listdir    
 
 def parseMatchupsFile(path:str) -> list:
     ''' Reads the matchup json file.
@@ -60,5 +61,21 @@ def getAllPokemonTypes(matchupsPath:str, duplicates:bool=False) -> dict:
     singleTypes = parseMatchupsFile(matchupsPath)
     dualTypes = generateAllPossibleDualTypes(singleTypes, duplicates)
 
-    return dict(map(lambda pokemonType: (pokemonType.name, pokemonType), (singleTypes + dualTypes)))
+    return dict((pokemonType.name, pokemonType) for pokemonType in (singleTypes + dualTypes))
 
+def loadGenData(duplicates:bool=False) -> dict:
+    base_path = "matchup_data/"
+    file_names = listdir(base_path)
+    def mapping_func(name:str) -> tuple:
+        key = name.partition('-')[2].partition('.')[0]
+        value = getAllPokemonTypes(base_path + name, duplicates)
+        return (key, value)
+    return dict(map(mapping_func, file_names))
+
+def loadStatsData() -> dict:
+    path = "stats_data/average_types.json"
+    try:
+        file = open(path, 'r')
+        return json.load(file)
+    finally:
+        file.close()

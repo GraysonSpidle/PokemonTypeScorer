@@ -1,19 +1,11 @@
 ''' The main script that does the calculations. '''
 
-from sys import argv
 from pokemonType import PokemonType
 from math import e
-from formulas import offensiveWeightFunc, defensiveWeightFunc
+from formulas import *
 
+import json
 import toolbox
-
-# ====================
-#     COMMAND LINE
-# ====================
-if len(argv) > 1:
-    matchupsPath = str(argv[1])
-else:
-    matchupsPath = "matchup_data/gen-vii.json"
 
 # ====================
 #  UTILITY FUNCTIONS
@@ -38,7 +30,7 @@ def printRatings(ratings:dict) -> None:
 # ====================
 #   RATING FUNCTIONS
 # ====================
-def rateTypes(pokemonTypes:dict) -> dict:
+def _preliminaryRateTypes(pokemonTypes:dict, offensiveWeightFunc:callable, defensiveWeightFunc:callable) -> dict:
     ratings = {}
     for (name, pokemonType) in pokemonTypes.items():
         scores = pokemonType.rate(weights=(offensiveWeightFunc,defensiveWeightFunc))
@@ -48,10 +40,10 @@ def rateTypes(pokemonTypes:dict) -> dict:
     normalize(ratings)
     return ratings
 
-def rateAgain(pokemonType:PokemonType, ratings:dict) -> float:
+def _rateAgain(pokemonType:PokemonType, ratings:dict, offensiveWeightFunc:callable, defensiveWeightFunc:callable) -> float:
     output = 0
 
-    def genericCalculator(matchupData:dict, weightFunc:callable) -> float:
+    def _genericCalculator(matchupData:dict, weightFunc:callable) -> float:
         local_output = 0
         for (multiplier_str, typeNames) in matchupData.items():
             weight = weightFunc(float(multiplier_str))
@@ -60,29 +52,48 @@ def rateAgain(pokemonType:PokemonType, ratings:dict) -> float:
 
         return local_output
     
-    output += genericCalculator(pokemonType.offensiveMatchupData, offensiveWeightFunc)
-    output += genericCalculator(pokemonType.defensiveMatchupData, defensiveWeightFunc)
+    output += _genericCalculator(pokemonType.offensiveMatchupData, offensiveWeightFunc)
+    output += _genericCalculator(pokemonType.defensiveMatchupData, defensiveWeightFunc)
 
     return output
 
-def rateTypesAgain(originalRatings:dict, pokemonTypes:dict) -> dict:
+def _secondaryRateTypes(originalRatings:dict, pokemonTypes:dict, offensiveWeightFunc:callable, defensiveWeightFunc:callable) -> dict:
     output = {}
     for (name, pokemonType) in pokemonTypes.items():
-        output[name] = rateAgain(pokemonType, originalRatings)
+        output[name] = _rateAgain(pokemonType, originalRatings, offensiveWeightFunc, defensiveWeightFunc)
     output = dict(sorted(output.items(), key=lambda item: item[1])) # Sort from worst type to best type
     normalize(output)
     return output
 
+def rateTypes(pokemonTypes:dict, offensiveWeightFunc:callable, defensiveWeightFunc:callable) -> dict:
+    vaccuum_ratings = _preliminaryRateTypes(pokemonTypes, offensiveWeightFunc, defensiveWeightFunc)
+    # Now we're going to reward types that are resistant to types that have high ratings and penalize the types that are weak to types with high ratings.
+    # Similarly, we'll also reward types that are strong against highly rated types and penalize types that are weak against highly rated types.
+    contextual_ratings = _secondaryRateTypes(vaccuum_ratings, pokemonTypes, offensiveWeightFunc, defensiveWeightFunc)
+    return contextual_ratings
+
 # ====================
 #         MAIN
 # ====================
-pokemonTypes = toolbox.getAllPokemonTypes(matchupsPath) # Get all pokemon types
+offensiveWeightFunc = offensivePiecewiseWeightFunc
+defensiveWeightFunc = defensivePiecewiseWeightFunc
 
-ratings = rateTypes(pokemonTypes) # These are the ratings in a vaccuum.
-# printRatings(ratings)
+gen_data = toolbox.loadGenData(True)
+ratings_across_gens = {}
+for (gen_num, data) in gen_data.items():
+    gen_ratings = rateTypes(data, offensiveWeightFunc, defensiveWeightFunc)
+    for name in data.keys():
+        if name not in ratings_across_gens.keys():
+            ratings_across_gens[name] = {}
+        
+        ratings_across_gens[name][gen_num] = gen_ratings[name]
 
-# Now we're going to reward types that are resistant to types that have high ratings and penalize the types that are weak to types with high ratings.
-# Similarly, we'll also reward types that are strong against highly rated types and penalize types that are weak against highly rated types.
+for gen_num in gen_data.keys():
+    for (name, data) in ratings_across_gens.items():
+        if gen_num not in data.keys():
+            data[gen_num] = "Not Introduced"
 
-newRatings = rateTypesAgain(ratings, pokemonTypes)
-printRatings(newRatings)
+file = open("results.json", 'w')
+file.write(json.dumps(ratings_across_gens, sort_keys=True, indent=3))
+file.close()
+
