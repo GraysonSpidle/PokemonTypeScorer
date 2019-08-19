@@ -3,1392 +3,1392 @@
       "attack": 51.0,
       "defense": 57.05555555555556,
       "hp": 52.72222222222222,
-      "special-attack": 40.166666666666664,
-      "special-defense": 44.833333333333336,
+      "special_attack": 40.166666666666664,
+      "special_defense": 44.833333333333336,
       "speed": 47.833333333333336
    },
    "Bug_Electric": {
       "attack": 69.2,
       "defense": 77.0,
       "hp": 66.2,
-      "special-attack": 99.8,
-      "special-defense": 67.0,
+      "special_attack": 99.8,
+      "special_defense": 67.0,
       "speed": 59.0
    },
    "Bug_Fairy": {
       "attack": 51.666666666666664,
       "defense": 53.333333333333336,
       "hp": 53.333333333333336,
-      "special-attack": 81.66666666666667,
-      "special-defense": 60.0,
+      "special_attack": 81.66666666666667,
+      "special_defense": 60.0,
       "speed": 110.66666666666667
    },
    "Bug_Fighting": {
       "attack": 146.5,
       "defense": 91.5,
       "hp": 84.5,
-      "special-attack": 67.5,
-      "special-defense": 72.5,
+      "special_attack": 67.5,
+      "special_defense": 72.5,
       "speed": 97.5
    },
    "Bug_Fire": {
       "attack": 72.5,
       "defense": 60.0,
       "hp": 70.0,
-      "special-attack": 92.5,
-      "special-defense": 80.0,
+      "special_attack": 92.5,
+      "special_defense": 80.0,
       "speed": 80.0
    },
    "Bug_Flying": {
       "attack": 70.14285714285714,
       "defense": 61.57142857142857,
       "hp": 63.0,
-      "special-attack": 74.28571428571429,
-      "special-defense": 69.07142857142857,
+      "special_attack": 74.28571428571429,
+      "special_defense": 69.07142857142857,
       "speed": 84.28571428571429
    },
    "Bug_Ghost": {
       "attack": 90.0,
       "defense": 45.0,
       "hp": 1.0,
-      "special-attack": 30.0,
-      "special-defense": 30.0,
+      "special_attack": 30.0,
+      "special_defense": 30.0,
       "speed": 40.0
    },
    "Bug_Grass": {
       "attack": 73.83333333333333,
       "defense": 76.66666666666667,
       "hp": 55.0,
-      "special-attack": 57.333333333333336,
-      "special-defense": 76.66666666666667,
+      "special_attack": 57.333333333333336,
+      "special_defense": 76.66666666666667,
       "speed": 44.5
    },
    "Bug_Ground": {
       "attack": 62.0,
       "defense": 97.5,
       "hp": 45.5,
-      "special-attack": 44.5,
-      "special-defense": 57.5,
+      "special_attack": 44.5,
+      "special_defense": 57.5,
       "speed": 38.0
    },
    "Bug_Poison": {
       "attack": 68.33333333333333,
       "defense": 58.083333333333336,
       "hp": 53.75,
-      "special-attack": 42.5,
-      "special-defense": 60.166666666666664,
+      "special_attack": 42.5,
+      "special_defense": 60.166666666666664,
       "speed": 65.91666666666667
    },
    "Bug_Rock": {
       "attack": 60.0,
       "defense": 146.66666666666666,
       "hp": 46.666666666666664,
-      "special-attack": 36.666666666666664,
-      "special-defense": 113.33333333333333,
+      "special_attack": 36.666666666666664,
+      "special_defense": 113.33333333333333,
       "speed": 35.0
    },
    "Bug_Steel": {
       "attack": 114.71428571428571,
       "defense": 112.42857142857143,
       "hp": 67.71428571428571,
-      "special-attack": 68.14285714285714,
-      "special-defense": 83.28571428571429,
+      "special_attack": 68.14285714285714,
+      "special_defense": 83.28571428571429,
       "speed": 63.42857142857143
    },
    "Bug_Water": {
       "attack": 63.333333333333336,
       "defense": 70.66666666666667,
       "hp": 46.666666666666664,
-      "special-attack": 43.333333333333336,
-      "special-defense": 57.333333333333336,
+      "special_attack": 43.333333333333336,
+      "special_defense": 57.333333333333336,
       "speed": 61.666666666666664
    },
    "Dark": {
       "attack": 81.91666666666667,
       "defense": 58.916666666666664,
       "hp": 59.166666666666664,
-      "special-attack": 78.16666666666667,
-      "special-defense": 60.166666666666664,
+      "special_attack": 78.16666666666667,
+      "special_defense": 60.166666666666664,
       "speed": 86.0
    },
    "Dark_Dragon": {
       "attack": 89.0,
       "defense": 65.75,
       "hp": 109.75,
-      "special-attack": 83.0,
-      "special-defense": 65.75,
+      "special_attack": 83.0,
+      "special_defense": 65.75,
       "speed": 59.25
    },
    "Dark_Fighting": {
       "attack": 82.5,
       "defense": 92.5,
       "hp": 57.5,
-      "special-attack": 40.0,
-      "special-defense": 92.5,
+      "special_attack": 40.0,
+      "special_defense": 92.5,
       "speed": 53.0
    },
    "Dark_Fire": {
       "attack": 80.0,
       "defense": 56.666666666666664,
       "hp": 65.0,
-      "special-attack": 110.0,
-      "special-defense": 73.33333333333333,
+      "special_attack": 110.0,
+      "special_defense": 73.33333333333333,
       "speed": 91.66666666666667
    },
    "Dark_Flying": {
       "attack": 92.2,
       "defense": 73.8,
       "hp": 93.2,
-      "special-attack": 84.2,
-      "special-defense": 70.4,
+      "special_attack": 84.2,
+      "special_defense": 70.4,
       "speed": 80.2
    },
    "Dark_Ghost": {
       "attack": 80.0,
       "defense": 100.0,
       "hp": 50.0,
-      "special-attack": 75.0,
-      "special-defense": 90.0,
+      "special_attack": 75.0,
+      "special_defense": 90.0,
       "speed": 35.0
    },
    "Dark_Ice": {
       "attack": 107.5,
       "defense": 60.0,
       "hp": 62.5,
-      "special-attack": 40.0,
-      "special-defense": 80.0,
+      "special_attack": 40.0,
+      "special_defense": 80.0,
       "speed": 120.0
    },
    "Dark_Normal": {
       "attack": 66.0,
       "defense": 58.333333333333336,
       "hp": 60.0,
-      "special-attack": 35.0,
-      "special-defense": 65.0,
+      "special_attack": 35.0,
+      "special_defense": 65.0,
       "speed": 75.33333333333333
    },
    "Dark_Psychic": {
       "attack": 73.0,
       "defense": 70.5,
       "hp": 69.5,
-      "special-attack": 52.5,
-      "special-defense": 60.5,
+      "special_attack": 52.5,
+      "special_defense": 60.5,
       "speed": 59.0
    },
    "Dark_Steel": {
       "attack": 105.0,
       "defense": 85.0,
       "hp": 55.0,
-      "special-attack": 50.0,
-      "special-defense": 55.0,
+      "special_attack": 50.0,
+      "special_defense": 55.0,
       "speed": 65.0
    },
    "Dragon": {
       "attack": 89.08333333333333,
       "defense": 66.91666666666667,
       "hp": 60.416666666666664,
-      "special-attack": 58.583333333333336,
-      "special-defense": 69.41666666666667,
+      "special_attack": 58.583333333333336,
+      "special_defense": 69.41666666666667,
       "speed": 59.5
    },
    "Dragon_Electric": {
       "attack": 150.0,
       "defense": 120.0,
       "hp": 100.0,
-      "special-attack": 120.0,
-      "special-defense": 100.0,
+      "special_attack": 120.0,
+      "special_defense": 100.0,
       "speed": 90.0
    },
    "Dragon_Fairy": {
       "attack": 110.0,
       "defense": 110.0,
       "hp": 75.0,
-      "special-attack": 110.0,
-      "special-defense": 105.0,
+      "special_attack": 110.0,
+      "special_defense": 105.0,
       "speed": 80.0
    },
    "Dragon_Fighting": {
       "attack": 98.33333333333333,
       "defense": 113.33333333333333,
       "hp": 68.33333333333333,
-      "special-attack": 88.33333333333333,
-      "special-defense": 93.33333333333333,
+      "special_attack": 88.33333333333333,
+      "special_defense": 93.33333333333333,
       "speed": 78.33333333333333
    },
    "Dragon_Fire": {
       "attack": 120.0,
       "defense": 100.0,
       "hp": 100.0,
-      "special-attack": 150.0,
-      "special-defense": 120.0,
+      "special_attack": 150.0,
+      "special_defense": 120.0,
       "speed": 90.0
    },
    "Dragon_Flying": {
       "attack": 135.66666666666666,
       "defense": 97.5,
       "hp": 94.33333333333333,
-      "special-attack": 121.66666666666667,
-      "special-defense": 94.16666666666667,
+      "special_attack": 121.66666666666667,
+      "special_defense": 94.16666666666667,
       "speed": 98.33333333333333
    },
    "Dragon_Ground": {
       "attack": 107.5,
       "defense": 94.25,
       "hp": 103.5,
-      "special-attack": 75.5,
-      "special-defense": 81.25,
+      "special_attack": 75.5,
+      "special_defense": 81.25,
       "speed": 88.5
    },
    "Dragon_Ice": {
       "attack": 140.0,
       "defense": 93.33333333333333,
       "hp": 125.0,
-      "special-attack": 140.0,
-      "special-defense": 93.33333333333333,
+      "special_attack": 140.0,
+      "special_defense": 93.33333333333333,
       "speed": 95.0
    },
    "Dragon_Psychic": {
       "attack": 100.0,
       "defense": 97.5,
       "hp": 80.0,
-      "special-attack": 135.0,
-      "special-defense": 127.5,
+      "special_attack": 135.0,
+      "special_defense": 127.5,
       "speed": 110.0
    },
    "Electric": {
       "attack": 66.30952380952381,
       "defense": 51.404761904761905,
       "hp": 53.476190476190474,
-      "special-attack": 72.26190476190476,
-      "special-defense": 61.73809523809524,
+      "special_attack": 72.26190476190476,
+      "special_defense": 61.73809523809524,
       "speed": 87.80952380952381
    },
    "Electric_Dragon": {
       "attack": 95.0,
       "defense": 105.0,
       "hp": 90.0,
-      "special-attack": 165.0,
-      "special-defense": 110.0,
+      "special_attack": 165.0,
+      "special_defense": 110.0,
       "speed": 45.0
    },
    "Electric_Fairy": {
       "attack": 86.5,
       "defense": 71.0,
       "hp": 68.5,
-      "special-attack": 88.0,
-      "special-defense": 71.0,
+      "special_attack": 88.0,
+      "special_defense": 71.0,
       "speed": 115.5
    },
    "Electric_Fire": {
       "attack": 65.0,
       "defense": 107.0,
       "hp": 50.0,
-      "special-attack": 105.0,
-      "special-defense": 107.0,
+      "special_attack": 105.0,
+      "special_defense": 107.0,
       "speed": 86.0
    },
    "Electric_Flying": {
       "attack": 86.66666666666667,
       "defense": 77.0,
       "hp": 71.33333333333333,
-      "special-attack": 112.16666666666667,
-      "special-defense": 81.16666666666667,
+      "special_attack": 112.16666666666667,
+      "special_defense": 81.16666666666667,
       "speed": 99.0
    },
    "Electric_Ghost": {
       "attack": 50.0,
       "defense": 77.0,
       "hp": 50.0,
-      "special-attack": 95.0,
-      "special-defense": 77.0,
+      "special_attack": 95.0,
+      "special_defense": 77.0,
       "speed": 91.0
    },
    "Electric_Grass": {
       "attack": 65.0,
       "defense": 107.0,
       "hp": 50.0,
-      "special-attack": 105.0,
-      "special-defense": 107.0,
+      "special_attack": 105.0,
+      "special_defense": 107.0,
       "speed": 86.0
    },
    "Electric_Ice": {
       "attack": 65.0,
       "defense": 107.0,
       "hp": 50.0,
-      "special-attack": 105.0,
-      "special-defense": 107.0,
+      "special_attack": 105.0,
+      "special_defense": 107.0,
       "speed": 86.0
    },
    "Electric_Normal": {
       "attack": 46.5,
       "defense": 42.5,
       "hp": 53.0,
-      "special-attack": 85.0,
-      "special-defense": 68.5,
+      "special_attack": 85.0,
+      "special_defense": 68.5,
       "speed": 89.5
    },
    "Electric_Psychic": {
       "attack": 85.0,
       "defense": 50.0,
       "hp": 60.0,
-      "special-attack": 95.0,
-      "special-defense": 85.0,
+      "special_attack": 95.0,
+      "special_defense": 85.0,
       "speed": 110.0
    },
    "Electric_Steel": {
       "attack": 72.2,
       "defense": 81.2,
       "hp": 55.0,
-      "special-attack": 85.0,
-      "special-defense": 72.2,
+      "special_attack": 85.0,
+      "special_defense": 72.2,
       "speed": 73.4
    },
    "Electric_Water": {
       "attack": 65.0,
       "defense": 107.0,
       "hp": 50.0,
-      "special-attack": 105.0,
-      "special-defense": 107.0,
+      "special_attack": 105.0,
+      "special_defense": 107.0,
       "speed": 86.0
    },
    "Fairy": {
       "attack": 63.11764705882353,
       "defense": 64.3529411764706,
       "hp": 73.23529411764706,
-      "special-attack": 78.94117647058823,
-      "special-defense": 85.76470588235294,
+      "special_attack": 78.94117647058823,
+      "special_defense": 85.76470588235294,
       "speed": 52.8235294117647
    },
    "Fairy_Flying": {
       "attack": 45.0,
       "defense": 90.0,
       "hp": 70.0,
-      "special-attack": 100.0,
-      "special-defense": 110.0,
+      "special_attack": 100.0,
+      "special_defense": 110.0,
       "speed": 60.0
    },
    "Fighting": {
       "attack": 97.45454545454545,
       "defense": 63.68181818181818,
       "hp": 71.36363636363636,
-      "special-attack": 42.63636363636363,
-      "special-defense": 62.04545454545455,
+      "special_attack": 42.63636363636363,
+      "special_defense": 62.04545454545455,
       "speed": 59.5
    },
    "Fighting_Dark": {
       "attack": 124.0,
       "defense": 78.0,
       "hp": 95.0,
-      "special-attack": 69.0,
-      "special-defense": 71.0,
+      "special_attack": 69.0,
+      "special_defense": 71.0,
       "speed": 58.0
    },
    "Fighting_Flying": {
       "attack": 92.0,
       "defense": 75.0,
       "hp": 78.0,
-      "special-attack": 74.0,
-      "special-defense": 63.0,
+      "special_attack": 74.0,
+      "special_defense": 63.0,
       "speed": 118.0
    },
    "Fighting_Ghost": {
       "attack": 125.0,
       "defense": 80.0,
       "hp": 90.0,
-      "special-attack": 90.0,
-      "special-defense": 90.0,
+      "special_attack": 90.0,
+      "special_defense": 90.0,
       "speed": 125.0
    },
    "Fighting_Ice": {
       "attack": 132.0,
       "defense": 77.0,
       "hp": 97.0,
-      "special-attack": 62.0,
-      "special-defense": 67.0,
+      "special_attack": 62.0,
+      "special_defense": 67.0,
       "speed": 43.0
    },
    "Fighting_Psychic": {
       "attack": 66.66666666666667,
       "defense": 71.66666666666667,
       "hp": 50.0,
-      "special-attack": 60.0,
-      "special-defense": 71.66666666666667,
+      "special_attack": 60.0,
+      "special_defense": 71.66666666666667,
       "speed": 80.0
    },
    "Fighting_Steel": {
       "attack": 127.5,
       "defense": 79.0,
       "hp": 70.0,
-      "special-attack": 127.5,
-      "special-defense": 70.0,
+      "special_attack": 127.5,
+      "special_defense": 70.0,
       "speed": 101.0
    },
    "Fire": {
       "attack": 77.93548387096774,
       "defense": 57.903225806451616,
       "hp": 62.45161290322581,
-      "special-attack": 74.38709677419355,
-      "special-defense": 64.2258064516129,
+      "special_attack": 74.38709677419355,
+      "special_defense": 64.2258064516129,
       "speed": 72.83870967741936
    },
    "Fire_Dark": {
       "attack": 115.0,
       "defense": 90.0,
       "hp": 95.0,
-      "special-attack": 80.0,
-      "special-defense": 90.0,
+      "special_attack": 80.0,
+      "special_defense": 90.0,
       "speed": 60.0
    },
    "Fire_Dragon": {
       "attack": 104.0,
       "defense": 123.0,
       "hp": 69.0,
-      "special-attack": 110.5,
-      "special-defense": 85.0,
+      "special_attack": 110.5,
+      "special_defense": 85.0,
       "speed": 68.0
    },
    "Fire_Fighting": {
       "attack": 109.0,
       "defense": 64.71428571428571,
       "hp": 80.0,
-      "special-attack": 96.71428571428571,
-      "special-defense": 64.71428571428571,
+      "special_attack": 96.71428571428571,
+      "special_defense": 64.71428571428571,
       "speed": 77.71428571428571
    },
    "Fire_Flying": {
       "attack": 91.71428571428571,
       "defense": 76.0,
       "hp": 81.0,
-      "special-attack": 104.42857142857143,
-      "special-defense": 90.0,
+      "special_attack": 104.42857142857143,
+      "special_defense": 90.0,
       "speed": 97.57142857142857
    },
    "Fire_Ghost": {
       "attack": 95.66666666666667,
       "defense": 91.0,
       "hp": 57.666666666666664,
-      "special-attack": 83.66666666666667,
-      "special-defense": 79.66666666666667,
+      "special_attack": 83.66666666666667,
+      "special_defense": 79.66666666666667,
       "speed": 65.66666666666667
    },
    "Fire_Ground": {
       "attack": 93.33333333333333,
       "defense": 70.0,
       "hp": 66.66666666666667,
-      "special-attack": 105.0,
-      "special-defense": 75.0,
+      "special_attack": 105.0,
+      "special_defense": 75.0,
       "speed": 31.666666666666668
    },
    "Fire_Normal": {
       "attack": 59.0,
       "defense": 65.0,
       "hp": 74.0,
-      "special-attack": 91.0,
-      "special-defense": 60.0,
+      "special_attack": 91.0,
+      "special_defense": 60.0,
       "speed": 89.0
    },
    "Fire_Psychic": {
       "attack": 49.5,
       "defense": 88.5,
       "hp": 90.0,
-      "special-attack": 127.0,
-      "special-defense": 102.5,
+      "special_attack": 127.0,
+      "special_defense": 102.5,
       "speed": 79.5
    },
    "Fire_Rock": {
       "attack": 50.0,
       "defense": 120.0,
       "hp": 60.0,
-      "special-attack": 90.0,
-      "special-defense": 80.0,
+      "special_attack": 90.0,
+      "special_defense": 80.0,
       "speed": 30.0
    },
    "Fire_Steel": {
       "attack": 90.0,
       "defense": 106.0,
       "hp": 91.0,
-      "special-attack": 130.0,
-      "special-defense": 106.0,
+      "special_attack": 130.0,
+      "special_defense": 106.0,
       "speed": 77.0
    },
    "Fire_Water": {
       "attack": 110.0,
       "defense": 120.0,
       "hp": 80.0,
-      "special-attack": 130.0,
-      "special-defense": 90.0,
+      "special_attack": 130.0,
+      "special_defense": 90.0,
       "speed": 70.0
    },
    "Flying": {
       "attack": 107.5,
       "defense": 75.0,
       "hp": 79.0,
-      "special-attack": 117.5,
-      "special-defense": 85.0,
+      "special_attack": 117.5,
+      "special_defense": 85.0,
       "speed": 116.0
    },
    "Flying_Dragon": {
       "attack": 50.0,
       "defense": 57.5,
       "hp": 62.5,
-      "special-attack": 71.0,
-      "special-defense": 60.0,
+      "special_attack": 71.0,
+      "special_defense": 60.0,
       "speed": 89.0
    },
    "Ghost": {
       "attack": 76.5,
       "defense": 88.0,
       "hp": 49.3,
-      "special-attack": 73.4,
-      "special-defense": 89.4,
+      "special_attack": 73.4,
+      "special_defense": 89.4,
       "speed": 53.0
    },
    "Ghost_Dark": {
       "attack": 92.0,
       "defense": 108.0,
       "hp": 50.0,
-      "special-attack": 92.0,
-      "special-defense": 108.0,
+      "special_attack": 92.0,
+      "special_defense": 108.0,
       "speed": 35.0
    },
    "Ghost_Dragon": {
       "attack": 110.0,
       "defense": 110.0,
       "hp": 150.0,
-      "special-attack": 110.0,
-      "special-defense": 110.0,
+      "special_attack": 110.0,
+      "special_defense": 110.0,
       "speed": 90.0
    },
    "Ghost_Fairy": {
       "attack": 90.0,
       "defense": 80.0,
       "hp": 55.0,
-      "special-attack": 50.0,
-      "special-defense": 105.0,
+      "special_attack": 50.0,
+      "special_defense": 105.0,
       "speed": 96.0
    },
    "Ghost_Fire": {
       "attack": 41.666666666666664,
       "defense": 68.33333333333333,
       "hp": 56.666666666666664,
-      "special-attack": 101.66666666666667,
-      "special-defense": 68.33333333333333,
+      "special_attack": 101.66666666666667,
+      "special_defense": 68.33333333333333,
       "speed": 51.666666666666664
    },
    "Ghost_Flying": {
       "attack": 66.66666666666667,
       "defense": 49.333333333333336,
       "hp": 105.0,
-      "special-attack": 82.66666666666667,
-      "special-defense": 56.0,
+      "special_attack": 82.66666666666667,
+      "special_defense": 56.0,
       "speed": 81.0
    },
    "Ghost_Grass": {
       "attack": 85.9090909090909,
       "defense": 90.18181818181819,
       "hp": 62.18181818181818,
-      "special-attack": 55.36363636363637,
-      "special-defense": 68.36363636363636,
+      "special_attack": 55.36363636363637,
+      "special_defense": 68.36363636363636,
       "speed": 57.63636363636363
    },
    "Ghost_Ground": {
       "attack": 65.0,
       "defense": 95.0,
       "hp": 70.0,
-      "special-attack": 85.0,
-      "special-defense": 60.0,
+      "special_attack": 85.0,
+      "special_defense": 60.0,
       "speed": 25.0
    },
    "Ghost_Poison": {
       "attack": 53.75,
       "defense": 53.75,
       "hp": 48.75,
-      "special-attack": 128.75,
-      "special-defense": 65.0,
+      "special_attack": 128.75,
+      "special_defense": 65.0,
       "speed": 103.75
    },
    "Grass": {
       "attack": 69.8974358974359,
       "defense": 69.82051282051282,
       "hp": 63.35897435897436,
-      "special-attack": 70.48717948717949,
-      "special-defense": 65.15384615384616,
+      "special_attack": 70.48717948717949,
+      "special_defense": 65.15384615384616,
       "speed": 59.69230769230769
    },
    "Grass_Dark": {
       "attack": 95.0,
       "defense": 53.333333333333336,
       "hp": 76.66666666666667,
-      "special-attack": 88.33333333333333,
-      "special-defense": 53.333333333333336,
+      "special_attack": 88.33333333333333,
+      "special_defense": 53.333333333333336,
       "speed": 65.0
    },
    "Grass_Dragon": {
       "attack": 107.5,
       "defense": 80.0,
       "hp": 82.5,
-      "special-attack": 135.0,
-      "special-defense": 80.0,
+      "special_attack": 135.0,
+      "special_defense": 80.0,
       "speed": 95.0
    },
    "Grass_Fairy": {
       "attack": 60.8,
       "defense": 79.0,
       "hp": 54.0,
-      "special-attack": 70.8,
-      "special-defense": 79.0,
+      "special_attack": 70.8,
+      "special_defense": 79.0,
       "speed": 60.4
    },
    "Grass_Fighting": {
       "attack": 109.0,
       "defense": 91.33333333333333,
       "hp": 79.66666666666667,
-      "special-attack": 74.66666666666667,
-      "special-defense": 88.0,
+      "special_attack": 74.66666666666667,
+      "special_defense": 88.0,
       "speed": 80.66666666666667
    },
    "Grass_Flying": {
       "attack": 62.285714285714285,
       "defense": 64.0,
       "hp": 72.85714285714286,
-      "special-attack": 63.857142857142854,
-      "special-defense": 71.0,
+      "special_attack": 63.857142857142854,
+      "special_defense": 71.0,
       "speed": 73.14285714285714
    },
    "Grass_Ghost": {
       "attack": 107.0,
       "defense": 75.0,
       "hp": 78.0,
-      "special-attack": 100.0,
-      "special-defense": 100.0,
+      "special_attack": 100.0,
+      "special_defense": 100.0,
       "speed": 70.0
    },
    "Grass_Ground": {
       "attack": 109.0,
       "defense": 105.0,
       "hp": 95.0,
-      "special-attack": 75.0,
-      "special-defense": 85.0,
+      "special_attack": 75.0,
+      "special_defense": 85.0,
       "speed": 56.0
    },
    "Grass_Ice": {
       "attack": 95.33333333333333,
       "defense": 76.66666666666667,
       "hp": 80.0,
-      "special-attack": 95.33333333333333,
-      "special-defense": 83.33333333333333,
+      "special_attack": 95.33333333333333,
+      "special_defense": 83.33333333333333,
       "speed": 43.333333333333336
    },
    "Grass_Poison": {
       "attack": 70.53333333333333,
       "defense": 62.53333333333333,
       "hp": 64.86666666666666,
-      "special-attack": 87.13333333333334,
-      "special-defense": 75.33333333333333,
+      "special_attack": 87.13333333333334,
+      "special_defense": 75.33333333333333,
       "speed": 53.666666666666664
    },
    "Grass_Psychic": {
       "attack": 67.5,
       "defense": 82.5,
       "hp": 77.5,
-      "special-attack": 92.5,
-      "special-defense": 60.0,
+      "special_attack": 92.5,
+      "special_defense": 60.0,
       "speed": 47.5
    },
    "Grass_Steel": {
       "attack": 108.33333333333333,
       "defense": 117.66666666666667,
       "hp": 59.0,
-      "special-attack": 45.666666666666664,
-      "special-defense": 77.66666666666667,
+      "special_attack": 45.666666666666664,
+      "special_defense": 77.66666666666667,
       "speed": 46.333333333333336
    },
    "Ground": {
       "attack": 92.26666666666667,
       "defense": 83.06666666666666,
       "hp": 67.4,
-      "special-attack": 48.06666666666667,
-      "special-defense": 57.6,
+      "special_attack": 48.06666666666667,
+      "special_defense": 57.6,
       "speed": 54.46666666666667
    },
    "Ground_Dark": {
       "attack": 90.33333333333333,
       "defense": 53.333333333333336,
       "hp": 68.33333333333333,
-      "special-attack": 48.333333333333336,
-      "special-defense": 50.0,
+      "special_attack": 48.333333333333336,
+      "special_defense": 50.0,
       "speed": 77.0
    },
    "Ground_Dragon": {
       "attack": 85.0,
       "defense": 65.0,
       "hp": 65.0,
-      "special-attack": 65.0,
-      "special-defense": 65.0,
+      "special_attack": 65.0,
+      "special_defense": 65.0,
       "speed": 85.0
    },
    "Ground_Electric": {
       "attack": 66.0,
       "defense": 84.0,
       "hp": 109.0,
-      "special-attack": 81.0,
-      "special-defense": 99.0,
+      "special_attack": 81.0,
+      "special_defense": 99.0,
       "speed": 32.0
    },
    "Ground_Fire": {
       "attack": 180.0,
       "defense": 160.0,
       "hp": 100.0,
-      "special-attack": 150.0,
-      "special-defense": 90.0,
+      "special_attack": 150.0,
+      "special_defense": 90.0,
       "speed": 90.0
    },
    "Ground_Flying": {
       "attack": 110.0,
       "defense": 102.5,
       "hp": 79.5,
-      "special-attack": 75.0,
-      "special-defense": 75.0,
+      "special_attack": 75.0,
+      "special_defense": 75.0,
       "speed": 93.0
    },
    "Ground_Ghost": {
       "attack": 99.0,
       "defense": 65.0,
       "hp": 74.0,
-      "special-attack": 45.0,
-      "special-defense": 65.0,
+      "special_attack": 45.0,
+      "special_defense": 65.0,
       "speed": 45.0
    },
    "Ground_Psychic": {
       "attack": 55.0,
       "defense": 80.0,
       "hp": 50.0,
-      "special-attack": 55.0,
-      "special-defense": 95.0,
+      "special_attack": 55.0,
+      "special_defense": 95.0,
       "speed": 65.0
    },
    "Ground_Rock": {
       "attack": 118.33333333333333,
       "defense": 115.0,
       "hp": 100.0,
-      "special-attack": 43.333333333333336,
-      "special-defense": 43.333333333333336,
+      "special_attack": 43.333333333333336,
+      "special_defense": 43.333333333333336,
       "speed": 35.0
    },
    "Ground_Steel": {
       "attack": 96.66666666666667,
       "defense": 50.0,
       "hp": 51.666666666666664,
-      "special-attack": 45.0,
-      "special-defense": 60.0,
+      "special_attack": 45.0,
+      "special_defense": 60.0,
       "speed": 96.0
    },
    "Ice": {
       "attack": 74.46666666666667,
       "defense": 77.93333333333334,
       "hp": 66.73333333333333,
-      "special-attack": 77.06666666666666,
-      "special-defense": 80.4,
+      "special_attack": 77.06666666666666,
+      "special_defense": 80.4,
       "speed": 60.86666666666667
    },
    "Ice_Fairy": {
       "attack": 67.0,
       "defense": 75.0,
       "hp": 73.0,
-      "special-attack": 81.0,
-      "special-defense": 100.0,
+      "special_attack": 81.0,
+      "special_defense": 100.0,
       "speed": 109.0
    },
    "Ice_Flying": {
       "attack": 70.0,
       "defense": 72.5,
       "hp": 67.5,
-      "special-attack": 80.0,
-      "special-defense": 85.0,
+      "special_attack": 80.0,
+      "special_defense": 85.0,
       "speed": 80.0
    },
    "Ice_Ghost": {
       "attack": 80.0,
       "defense": 70.0,
       "hp": 70.0,
-      "special-attack": 80.0,
-      "special-defense": 70.0,
+      "special_attack": 80.0,
+      "special_defense": 70.0,
       "speed": 110.0
    },
    "Ice_Ground": {
       "attack": 93.33333333333333,
       "defense": 66.66666666666667,
       "hp": 86.66666666666667,
-      "special-attack": 53.333333333333336,
-      "special-defense": 50.0,
+      "special_attack": 53.333333333333336,
+      "special_defense": 50.0,
       "speed": 60.0
    },
    "Ice_Psychic": {
       "attack": 40.0,
       "defense": 25.0,
       "hp": 55.0,
-      "special-attack": 100.0,
-      "special-defense": 80.0,
+      "special_attack": 100.0,
+      "special_defense": 80.0,
       "speed": 80.0
    },
    "Ice_Steel": {
       "attack": 87.5,
       "defense": 105.0,
       "hp": 62.5,
-      "special-attack": 17.5,
-      "special-defense": 50.0,
+      "special_attack": 17.5,
+      "special_defense": 50.0,
       "speed": 52.5
    },
    "Ice_Water": {
       "attack": 60.0,
       "defense": 70.0,
       "hp": 90.0,
-      "special-attack": 75.0,
-      "special-defense": 70.0,
+      "special_attack": 75.0,
+      "special_defense": 70.0,
       "speed": 45.0
    },
    "Normal": {
       "attack": 76.04477611940298,
       "defense": 61.80597014925373,
       "hp": 80.98507462686567,
-      "special-attack": 56.52238805970149,
-      "special-defense": 67.80597014925372,
+      "special_attack": 56.52238805970149,
+      "special_defense": 67.80597014925372,
       "speed": 68.82089552238806
    },
    "Normal_Dragon": {
       "attack": 60.0,
       "defense": 85.0,
       "hp": 78.0,
-      "special-attack": 135.0,
-      "special-defense": 91.0,
+      "special_attack": 135.0,
+      "special_defense": 91.0,
       "speed": 36.0
    },
    "Normal_Fairy": {
       "attack": 45.0,
       "defense": 49.2,
       "hp": 99.6,
-      "special-attack": 54.0,
-      "special-defense": 52.2,
+      "special_attack": 54.0,
+      "special_defense": 52.2,
       "speed": 30.0
    },
    "Normal_Fighting": {
       "attack": 116.0,
       "defense": 78.5,
       "hp": 88.75,
-      "special-attack": 57.75,
-      "special-defense": 70.75,
+      "special_attack": 57.75,
+      "special_defense": 70.75,
       "speed": 93.25
    },
    "Normal_Flying": {
       "attack": 76.22222222222223,
       "defense": 53.888888888888886,
       "hp": 61.44444444444444,
-      "special-attack": 53.48148148148148,
-      "special-defense": 52.148148148148145,
+      "special_attack": 53.48148148148148,
+      "special_defense": 52.148148148148145,
       "speed": 76.96296296296296
    },
    "Normal_Grass": {
       "attack": 80.0,
       "defense": 60.0,
       "hp": 70.0,
-      "special-attack": 50.0,
-      "special-defense": 60.0,
+      "special_attack": 50.0,
+      "special_defense": 60.0,
       "speed": 85.0
    },
    "Normal_Ground": {
       "attack": 56.0,
       "defense": 77.0,
       "hp": 85.0,
-      "special-attack": 50.0,
-      "special-defense": 77.0,
+      "special_attack": 50.0,
+      "special_defense": 77.0,
       "speed": 78.0
    },
    "Normal_Psychic": {
       "attack": 72.33333333333333,
       "defense": 74.0,
       "hp": 86.66666666666667,
-      "special-attack": 102.66666666666667,
-      "special-defense": 101.0,
+      "special_attack": 102.66666666666667,
+      "special_defense": 101.0,
       "speed": 78.33333333333333
    },
    "Normal_Water": {
       "attack": 85.0,
       "defense": 60.0,
       "hp": 79.0,
-      "special-attack": 55.0,
-      "special-defense": 60.0,
+      "special_attack": 55.0,
+      "special_defense": 60.0,
       "speed": 71.0
    },
    "Poison": {
       "attack": 72.9375,
       "defense": 67.25,
       "hp": 66.0625,
-      "special-attack": 58.375,
-      "special-defense": 62.1875,
+      "special_attack": 58.375,
+      "special_defense": 62.1875,
       "speed": 55.625
    },
    "Poison_Bug": {
       "attack": 50.0,
       "defense": 90.0,
       "hp": 40.0,
-      "special-attack": 30.0,
-      "special-defense": 55.0,
+      "special_attack": 30.0,
+      "special_defense": 55.0,
       "speed": 65.0
    },
    "Poison_Dark": {
       "attack": 86.2,
       "defense": 69.8,
       "hp": 84.2,
-      "special-attack": 55.4,
-      "special-defense": 65.4,
+      "special_attack": 55.4,
+      "special_defense": 65.4,
       "speed": 65.6
    },
    "Poison_Dragon": {
       "attack": 74.0,
       "defense": 81.5,
       "hp": 69.0,
-      "special-attack": 112.0,
-      "special-defense": 98.0,
+      "special_attack": 112.0,
+      "special_defense": 98.0,
       "speed": 82.5
    },
    "Poison_Fighting": {
       "attack": 83.5,
       "defense": 52.5,
       "hp": 65.5,
-      "special-attack": 73.5,
-      "special-defense": 52.5,
+      "special_attack": 73.5,
+      "special_defense": 52.5,
       "speed": 67.5
    },
    "Poison_Fire": {
       "attack": 57.333333333333336,
       "defense": 53.333333333333336,
       "hp": 61.333333333333336,
-      "special-attack": 97.66666666666667,
-      "special-defense": 53.333333333333336,
+      "special_attack": 97.66666666666667,
+      "special_defense": 53.333333333333336,
       "speed": 103.66666666666667
    },
    "Poison_Flying": {
       "attack": 71.66666666666667,
       "defense": 61.666666666666664,
       "hp": 66.66666666666667,
-      "special-attack": 55.0,
-      "special-defense": 65.0,
+      "special_attack": 55.0,
+      "special_defense": 65.0,
       "speed": 91.66666666666667
    },
    "Poison_Ground": {
       "attack": 97.0,
       "defense": 82.0,
       "hp": 85.5,
-      "special-attack": 80.0,
-      "special-defense": 80.0,
+      "special_attack": 80.0,
+      "special_defense": 80.0,
       "speed": 80.5
    },
    "Poison_Water": {
       "attack": 58.666666666666664,
       "defense": 91.33333333333333,
       "hp": 50.0,
-      "special-attack": 52.0,
-      "special-defense": 84.66666666666667,
+      "special_attack": 52.0,
+      "special_defense": 84.66666666666667,
       "speed": 36.666666666666664
    },
    "Psychic": {
       "attack": 64.21951219512195,
       "defense": 68.97560975609755,
       "hp": 71.95121951219512,
-      "special-attack": 95.85365853658537,
-      "special-defense": 82.97560975609755,
+      "special_attack": 95.85365853658537,
+      "special_defense": 82.97560975609755,
       "speed": 76.82926829268293
    },
    "Psychic_Dark": {
       "attack": 160.0,
       "defense": 60.0,
       "hp": 80.0,
-      "special-attack": 170.0,
-      "special-defense": 130.0,
+      "special_attack": 170.0,
+      "special_defense": 130.0,
       "speed": 80.0
    },
    "Psychic_Dragon": {
       "attack": 167.0,
       "defense": 97.0,
       "hp": 97.0,
-      "special-attack": 167.0,
-      "special-defense": 97.0,
+      "special_attack": 167.0,
+      "special_defense": 97.0,
       "speed": 129.0
    },
    "Psychic_Fairy": {
       "attack": 52.142857142857146,
       "defense": 53.57142857142857,
       "hp": 47.42857142857143,
-      "special-attack": 100.0,
-      "special-defense": 95.0,
+      "special_attack": 100.0,
+      "special_defense": 95.0,
       "speed": 73.57142857142857
    },
    "Psychic_Fighting": {
       "attack": 160.0,
       "defense": 86.66666666666667,
       "hp": 80.66666666666667,
-      "special-attack": 94.66666666666667,
-      "special-defense": 110.0,
+      "special_attack": 94.66666666666667,
+      "special_defense": 110.0,
       "speed": 106.66666666666667
    },
    "Psychic_Fire": {
       "attack": 100.0,
       "defense": 100.0,
       "hp": 100.0,
-      "special-attack": 100.0,
-      "special-defense": 100.0,
+      "special_attack": 100.0,
+      "special_defense": 100.0,
       "speed": 100.0
    },
    "Psychic_Flying": {
       "attack": 63.57142857142857,
       "defense": 70.42857142857143,
       "hp": 70.0,
-      "special-attack": 84.0,
-      "special-defense": 73.85714285714286,
+      "special_attack": 84.0,
+      "special_defense": 73.85714285714286,
       "speed": 93.0
    },
    "Psychic_Ghost": {
       "attack": 112.0,
       "defense": 86.0,
       "hp": 104.66666666666667,
-      "special-attack": 148.0,
-      "special-defense": 121.33333333333333,
+      "special_attack": 148.0,
+      "special_defense": 121.33333333333333,
       "speed": 81.33333333333333
    },
    "Psychic_Grass": {
       "attack": 100.0,
       "defense": 100.0,
       "hp": 100.0,
-      "special-attack": 100.0,
-      "special-defense": 100.0,
+      "special_attack": 100.0,
+      "special_defense": 100.0,
       "speed": 100.0
    },
    "Psychic_Steel": {
       "attack": 147.0,
       "defense": 117.0,
       "hp": 117.0,
-      "special-attack": 113.0,
-      "special-defense": 99.0,
+      "special_attack": 113.0,
+      "special_defense": 99.0,
       "speed": 87.0
    },
    "Rock": {
       "attack": 100.5,
       "defense": 89.28571428571429,
       "hp": 66.35714285714286,
-      "special-attack": 42.142857142857146,
-      "special-defense": 57.857142857142854,
+      "special_attack": 42.142857142857146,
+      "special_defense": 57.857142857142854,
       "speed": 51.42857142857143
    },
    "Rock_Bug": {
       "attack": 110.0,
       "defense": 75.0,
       "hp": 60.0,
-      "special-attack": 55.0,
-      "special-defense": 65.0,
+      "special_attack": 55.0,
+      "special_defense": 65.0,
       "speed": 60.0
    },
    "Rock_Dark": {
       "attack": 149.0,
       "defense": 130.0,
       "hp": 100.0,
-      "special-attack": 95.0,
-      "special-defense": 110.0,
+      "special_attack": 95.0,
+      "special_defense": 110.0,
       "speed": 66.0
    },
    "Rock_Dragon": {
       "attack": 105.0,
       "defense": 98.0,
       "hp": 70.0,
-      "special-attack": 57.0,
-      "special-defense": 52.0,
+      "special_attack": 57.0,
+      "special_defense": 52.0,
       "speed": 59.5
    },
    "Rock_Electric": {
       "attack": 98.33333333333333,
       "defense": 115.0,
       "hp": 58.333333333333336,
-      "special-attack": 43.333333333333336,
-      "special-defense": 46.666666666666664,
+      "special_attack": 43.333333333333336,
+      "special_defense": 46.666666666666664,
       "speed": 33.333333333333336
    },
    "Rock_Fairy": {
       "attack": 103.33333333333333,
       "defense": 136.66666666666666,
       "hp": 50.0,
-      "special-attack": 103.33333333333333,
-      "special-defense": 136.66666666666666,
+      "special_attack": 103.33333333333333,
+      "special_defense": 136.66666666666666,
       "speed": 70.0
    },
    "Rock_Fighting": {
       "attack": 129.0,
       "defense": 90.0,
       "hp": 91.0,
-      "special-attack": 72.0,
-      "special-defense": 90.0,
+      "special_attack": 72.0,
+      "special_defense": 90.0,
       "speed": 108.0
    },
    "Rock_Flying": {
       "attack": 89.55555555555556,
       "defense": 76.66666666666667,
       "hp": 62.77777777777778,
-      "special-attack": 79.77777777777777,
-      "special-defense": 77.77777777777777,
+      "special_attack": 79.77777777777777,
+      "special_defense": 77.77777777777777,
       "speed": 95.55555555555556
    },
    "Rock_Grass": {
       "attack": 61.0,
       "defense": 87.0,
       "hp": 76.0,
-      "special-attack": 71.0,
-      "special-defense": 97.0,
+      "special_attack": 71.0,
+      "special_defense": 97.0,
       "speed": 33.0
    },
    "Rock_Ground": {
       "attack": 81.33333333333333,
       "defense": 104.16666666666667,
       "hp": 55.0,
-      "special-attack": 45.0,
-      "special-defense": 50.833333333333336,
+      "special_attack": 45.0,
+      "special_defense": 50.833333333333336,
       "speed": 43.666666666666664
    },
    "Rock_Ice": {
       "attack": 68.0,
       "defense": 61.0,
       "hp": 100.0,
-      "special-attack": 83.0,
-      "special-defense": 77.5,
+      "special_attack": 83.0,
+      "special_defense": 77.5,
       "speed": 52.0
    },
    "Rock_Poison": {
       "attack": 53.0,
       "defense": 47.0,
       "hp": 109.0,
-      "special-attack": 127.0,
-      "special-defense": 131.0,
+      "special_attack": 127.0,
+      "special_defense": 131.0,
       "speed": 103.0
    },
    "Rock_Psychic": {
       "attack": 75.0,
       "defense": 75.0,
       "hp": 90.0,
-      "special-attack": 75.0,
-      "special-defense": 75.0,
+      "special_attack": 75.0,
+      "special_defense": 75.0,
       "speed": 70.0
    },
    "Rock_Steel": {
       "attack": 70.0,
       "defense": 160.5,
       "hp": 52.75,
-      "special-attack": 54.25,
-      "special-defense": 119.25,
+      "special_attack": 54.25,
+      "special_defense": 119.25,
       "speed": 28.25
    },
    "Rock_Water": {
       "attack": 75.33333333333333,
       "defense": 100.33333333333333,
       "hp": 51.5,
-      "special-attack": 69.66666666666667,
-      "special-defense": 63.666666666666664,
+      "special_attack": 69.66666666666667,
+      "special_defense": 63.666666666666664,
       "speed": 57.166666666666664
    },
    "Steel": {
       "attack": 90.0,
       "defense": 132.0,
       "hp": 62.0,
-      "special-attack": 64.0,
-      "special-defense": 92.0,
+      "special_attack": 64.0,
+      "special_defense": 92.0,
       "speed": 54.0
    },
    "Steel_Dragon": {
       "attack": 120.0,
       "defense": 120.0,
       "hp": 100.0,
-      "special-attack": 150.0,
-      "special-defense": 100.0,
+      "special_attack": 150.0,
+      "special_defense": 100.0,
       "speed": 90.0
    },
    "Steel_Fairy": {
       "attack": 92.0,
       "defense": 106.2,
       "hp": 63.4,
-      "special-attack": 90.0,
-      "special-defense": 93.4,
+      "special_attack": 90.0,
+      "special_defense": 93.4,
       "speed": 61.0
    },
    "Steel_Fighting": {
       "attack": 90.0,
       "defense": 129.0,
       "hp": 91.0,
-      "special-attack": 90.0,
-      "special-defense": 72.0,
+      "special_attack": 90.0,
+      "special_defense": 72.0,
       "speed": 108.0
    },
    "Steel_Flying": {
       "attack": 90.5,
       "defense": 121.5,
       "hp": 81.0,
-      "special-attack": 73.5,
-      "special-defense": 85.5,
+      "special_attack": 73.5,
+      "special_defense": 85.5,
       "speed": 65.5
    },
    "Steel_Ghost": {
       "attack": 97.5,
       "defense": 112.5,
       "hp": 56.0,
-      "special-attack": 70.0,
-      "special-defense": 71.5,
+      "special_attack": 70.0,
+      "special_defense": 71.5,
       "speed": 45.75
    },
    "Steel_Ground": {
       "attack": 105.0,
       "defense": 215.0,
       "hp": 75.0,
-      "special-attack": 55.0,
-      "special-defense": 80.0,
+      "special_attack": 55.0,
+      "special_defense": 80.0,
       "speed": 30.0
    },
    "Steel_Psychic": {
       "attack": 89.0,
       "defense": 108.85714285714286,
       "hp": 69.14285714285714,
-      "special-attack": 70.42857142857143,
-      "special-defense": 91.71428571428571,
+      "special_attack": 70.42857142857143,
+      "special_defense": 91.71428571428571,
       "speed": 59.42857142857143
    },
    "Steel_Rock": {
       "attack": 90.0,
       "defense": 140.0,
       "hp": 60.0,
-      "special-attack": 50.0,
-      "special-defense": 50.0,
+      "special_attack": 50.0,
+      "special_defense": 50.0,
       "speed": 40.0
    },
    "Water": {
       "attack": 71.86363636363636,
       "defense": 70.01515151515152,
       "hp": 65.74242424242425,
-      "special-attack": 72.81818181818181,
-      "special-defense": 66.5,
+      "special_attack": 72.81818181818181,
+      "special_defense": 66.5,
       "speed": 65.72727272727273
    },
    "Water_Bug": {
       "attack": 60.0,
       "defense": 78.66666666666667,
       "hp": 58.0,
-      "special-attack": 46.666666666666664,
-      "special-defense": 112.0,
+      "special_attack": 46.666666666666664,
+      "special_defense": 112.0,
       "speed": 37.0
    },
    "Water_Dark": {
       "attack": 120.0,
       "defense": 65.625,
       "hp": 69.875,
-      "special-attack": 98.625,
-      "special-defense": 65.375,
+      "special_attack": 98.625,
+      "special_defense": 65.375,
       "speed": 97.125
    },
    "Water_Dragon": {
       "attack": 107.5,
       "defense": 97.5,
       "hp": 82.5,
-      "special-attack": 122.5,
-      "special-defense": 107.5,
+      "special_attack": 122.5,
+      "special_defense": 107.5,
       "speed": 92.5
    },
    "Water_Electric": {
       "attack": 48.0,
       "defense": 48.0,
       "hp": 100.0,
-      "special-attack": 66.0,
-      "special-defense": 66.0,
+      "special_attack": 66.0,
+      "special_defense": 66.0,
       "speed": 67.0
    },
    "Water_Fairy": {
       "attack": 54.75,
       "defense": 79.75,
       "hp": 80.0,
-      "special-attack": 75.25,
-      "special-defense": 94.0,
+      "special_attack": 75.25,
+      "special_defense": 94.0,
       "speed": 58.75
    },
    "Water_Fighting": {
       "attack": 79.66666666666667,
       "defense": 91.66666666666667,
       "hp": 90.66666666666667,
-      "special-attack": 109.33333333333333,
-      "special-defense": 90.0,
+      "special_attack": 109.33333333333333,
+      "special_defense": 90.0,
       "speed": 95.33333333333333
    },
    "Water_Flying": {
       "attack": 56.57142857142857,
       "defense": 63.142857142857146,
       "hp": 66.0,
-      "special-attack": 68.71428571428571,
-      "special-defense": 81.85714285714286,
+      "special_attack": 68.71428571428571,
+      "special_defense": 81.85714285714286,
       "speed": 72.0
    },
    "Water_Ghost": {
       "attack": 50.0,
       "defense": 60.0,
       "hp": 77.5,
-      "special-attack": 75.0,
-      "special-defense": 95.0,
+      "special_attack": 75.0,
+      "special_defense": 95.0,
       "speed": 50.0
    },
    "Water_Grass": {
       "attack": 50.0,
       "defense": 50.0,
       "hp": 60.0,
-      "special-attack": 63.333333333333336,
-      "special-defense": 73.33333333333333,
+      "special_attack": 63.333333333333336,
+      "special_defense": 73.33333333333333,
       "speed": 50.0
    },
    "Water_Ground": {
       "attack": 84.4,
       "defense": 71.4,
       "hp": 87.1,
-      "special-attack": 69.4,
-      "special-defense": 68.4,
+      "special_attack": 69.4,
+      "special_defense": 68.4,
       "speed": 53.2
    },
    "Water_Ice": {
       "attack": 83.33333333333333,
       "defense": 113.33333333333333,
       "hp": 90.0,
-      "special-attack": 80.0,
-      "special-defense": 78.33333333333333,
+      "special_attack": 80.0,
+      "special_defense": 78.33333333333333,
       "speed": 66.66666666666667
    },
    "Water_Poison": {
       "attack": 68.33333333333333,
       "defense": 61.666666666666664,
       "hp": 61.666666666666664,
-      "special-attack": 61.666666666666664,
-      "special-defense": 91.66666666666667,
+      "special_attack": 61.666666666666664,
+      "special_defense": 91.66666666666667,
       "speed": 85.0
    },
    "Water_Psychic": {
       "attack": 78.33333333333333,
       "defense": 98.33333333333333,
       "hp": 83.83333333333333,
-      "special-attack": 90.0,
-      "special-defense": 77.5,
+      "special_attack": 90.0,
+      "special_defense": 77.5,
       "speed": 52.0
    },
    "Water_Rock": {
       "attack": 82.75,
       "defense": 115.25,
       "hp": 73.25,
-      "special-attack": 61.5,
-      "special-defense": 67.5,
+      "special_attack": 61.5,
+      "special_defense": 67.5,
       "speed": 36.0
    },
    "Water_Steel": {
       "attack": 86.0,
       "defense": 88.0,
       "hp": 84.0,
-      "special-attack": 111.0,
-      "special-defense": 101.0,
+      "special_attack": 111.0,
+      "special_defense": 101.0,
       "speed": 60.0
    }
 }

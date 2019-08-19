@@ -1,5 +1,5 @@
 ''' Houses the MatchupManager class. '''
-
+from itertools import chain
 from tkinter import Tk, Label, Y, N, LEFT, RIGHT, TOP, Grid, N, NW
 from errors import ValidationError
 import json
@@ -81,12 +81,8 @@ class MatchupManager:
         @raise ValidationError: If this MatchupManager isn't valid
         
         '''
-        offensiveMatchups = []
-        for matchup_list in self.offensiveMatchupData.values():
-            offensiveMatchups += matchup_list
-        defensiveMatchups = []
-        for matchup_list in self.defensiveMatchupData.values():
-            defensiveMatchups += matchup_list
+        offensiveMatchups = list(chain(*self.offensiveMatchupData.values()))
+        defensiveMatchups = list(chain(*self.defensiveMatchupData.values()))
 
         for matchup in offensiveMatchups:
             count = defensiveMatchups.count(matchup)
@@ -102,12 +98,14 @@ class MatchupManager:
                 raise ValidationError("\"{1}\" exists in multiple locations in \"{0}\" offensive matchup data.".format(self.name, matchup))
 
     def rate(self, *args, **kwargs) -> tuple:
-        ''' Rates this MatchupManager instance. Implementations may overload this function. 
+        ''' Rates this MatchupManager instance. Subclasses may overload this function. 
 
         @param weights A tuple that contains 2 callables that take in a float representing the multiplier and output a float representing the corresponding weight.
         The first callable is the offensive weight function and the second is the defensive weight function.
 
         @raise ValidationError: If this MatchupManager isn't valid.
+
+        @returns Returns a tuple containing the offensive rating and defensive rating.
         
         '''
 

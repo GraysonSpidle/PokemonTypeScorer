@@ -5,7 +5,7 @@ from matchupManager import MatchupManager
 from pokemonType import PokemonType
 from math import floor
 from itertools import permutations, combinations, takewhile
-from os import listdir    
+from os import listdir
 
 def parseMatchupsFile(path:str) -> list:
     ''' Reads the matchup json file.
@@ -47,7 +47,7 @@ def generateAllPossibleDualTypes(pokemonTypes:list, duplicates:bool=False) -> li
         output.append(PokemonType(name=new_name, type1=type1, type2=type2))
     return output
 
-def getAllPokemonTypes(matchupsPath:str, duplicates:bool=False) -> dict:
+def getAllPokemonTypes(matchupsPath:str, duplicates:bool=False) -> list:
     ''' Gets all the Pokemon types. Both single and dual-type Pokemon.\n
     
     @param matchupsPath: The path to the matchup json file.
@@ -55,13 +55,13 @@ def getAllPokemonTypes(matchupsPath:str, duplicates:bool=False) -> dict:
     @param duplicates: If this is True, then this function will include dual-types whose names are just switched around (ie. Water_Steel and Steel_Water).
     Single types are unaffected.
 
-    @return: A dictionary with the PokemonType's name (string) as the key and the PokemonType object as the value.
+    @return: A list with all PokemonTypes (both single and dual-types).
     '''
 
     singleTypes = parseMatchupsFile(matchupsPath)
     dualTypes = generateAllPossibleDualTypes(singleTypes, duplicates)
 
-    return dict((pokemonType.name, pokemonType) for pokemonType in (singleTypes + dualTypes))
+    return singleTypes + dualTypes
 
 def loadGenData(duplicates:bool=False) -> dict:
     base_path = "matchup_data/"
@@ -79,3 +79,31 @@ def loadStatsData() -> dict:
         return json.load(file)
     finally:
         file.close()
+
+def normalize(data:dict) -> None:
+    ''' Normalizes the data.
+    Puts all the data on a scale between 0 and 1.
+    '''
+    toAdd = float(list(data.items())[0][1])
+    toAdd *= -1 if toAdd < 0 else 1
+    for name in data.keys():
+        data[name] += toAdd
+    toDivide = float(list(data.values())[len(data) - 1])
+    for name in data.keys():
+        data[name] /= toDivide
+
+def printRatings(ratings:dict) -> None:
+    for (key, value) in ratings.items():
+        print("{0}: {1}".format(key, value))
+    print()
+
+if __name__ == "__main__":
+    with open("./matchup_data/gen-7.json") as file:
+        data = json.load(file)
+    file.close()
+    output = []
+    for (name, matchupData) in data.items():
+        output.append(PokemonType(name, matchupData))
+
+    output[0].validate()
+    raise Exception("")

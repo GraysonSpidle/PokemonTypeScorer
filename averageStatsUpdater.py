@@ -7,7 +7,7 @@ def getPokemonUrls() -> list:
     return [result["url"] for result in response["results"]]
 
 def readStat(stat_json:dict) -> tuple:
-    return (stat_json["stat"]["name"], stat_json["base_stat"])
+    return (stat_json["stat"]["name"].replace("-", "_"), stat_json["base_stat"])
 
 def readStats(stats:list) -> list:
     return [readStat(stat) for stat in stats]
