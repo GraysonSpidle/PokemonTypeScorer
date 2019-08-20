@@ -136,20 +136,22 @@ def rateTypesAcrossAllGens(offensiveWeightFunc:callable, defensiveWeightFunc:cal
     </head>
     <body>
         <h1>Results Across All Generations</h1>
-        <table>
+        <h3>Hint: click on the headers to sort</h3>
+        <table id="resultsTable">
             <tr>
-                <th>Pokemon Type Name</th>
+                <th onclick="sortTable(0)" style="cursor: pointer;">Pokemon Type Name</th>
                 {0}
             </tr>
             {1}
         </table>
+        <script>{2}</script>
     </body>
     </html>
     """
 
     html_table_headers = ""
     for gen_number_str in output.keys():
-        html_table_headers += "<th>Gen {}</th>".format(gen_number_str)
+        html_table_headers += "<th onclick=\"sortTable({0})\" style=\"cursor: pointer;\">Gen {0}</th>".format(gen_number_str)
 
     alphabetized_list_of_pokemon_types = []
     for data_set in output.values():
@@ -166,8 +168,13 @@ def rateTypesAcrossAllGens(offensiveWeightFunc:callable, defensiveWeightFunc:cal
             html_table_data += "<td>{}</td>".format(result)
         html_table_data += "</tr>"
     
+    html_scripts = ""
+    with open("scripts.js") as file:
+        html_scripts = file.read()
+    file.close()
+
     with open("type_results.html", 'w') as file:
-        file.write(html.format(html_table_headers, html_table_data))
+        file.write(html.format(html_table_headers, html_table_data, html_scripts))
     file.close()
     return output
 
