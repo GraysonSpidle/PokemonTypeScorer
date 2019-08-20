@@ -7,6 +7,14 @@ from math import floor
 from itertools import permutations, combinations, takewhile
 from os import listdir
 
+def union(left, right):
+    output = list(e for e in left)
+    for e in right:
+        if e in output:
+            continue
+        output.append(e)
+    return output
+
 def parseMatchupsFile(path:str) -> list:
     ''' Reads the matchup json file.
 
