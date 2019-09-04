@@ -29,6 +29,9 @@ def _preliminaryRateTypes(pokemonTypes:list, offensiveWeightFunc:callable, defen
 def _rateInContext(obj:MatchupManager, ratings:dict, offensiveWeightFunc:callable, defensiveWeightFunc:callable) -> float:
     output = 0
 
+    def _getDualTypeRatingsWithType(typeName:str) -> dict:
+        return dict(filter(lambda item: typeName in item[0], ratings.items()))
+    
     def _genericCalculator(matchupData:dict, weightFunc:callable) -> float:
         local_output = 0
         for (multiplier_str, typeNames) in matchupData.items():
@@ -37,9 +40,19 @@ def _rateInContext(obj:MatchupManager, ratings:dict, offensiveWeightFunc:callabl
                 local_output += weight * ratings[typeName]
 
         return local_output
+
+    def _dualTypeCalculator(matchupData:dict, weightFunc:callable) -> float:
+        local_output = 0
+        for (multiplier_str, typeNames) in matchupData.items():
+            weight = weightFunc(float(multiplier_str))
+            for typeName in typeNames:
+                for rating in _getDualTypeRatingsWithType(typeName).values():
+                    local_output += weight * rating
+                local_output += weight * ratings[typeName]
+        return local_output
     
-    output += _genericCalculator(obj.offensiveMatchupData, offensiveWeightFunc)
-    output += _genericCalculator(obj.defensiveMatchupData, defensiveWeightFunc)
+    output += _dualTypeCalculator(obj.offensiveMatchupData, offensiveWeightFunc)
+    output += _dualTypeCalculator(obj.defensiveMatchupData, defensiveWeightFunc)
 
     return output
 
@@ -78,7 +91,6 @@ def _rateTypes(pokemonTypes:list, offensiveWeightFunc:callable, defensiveWeightF
     contextual_ratings = _secondaryRateTypes(vaccuum_ratings, pokemonTypes, offensiveWeightFunc, defensiveWeightFunc)
     return contextual_ratings
 
-
 def rateTypesInGen(generation_number:int, offensiveWeightFunc:callable, defensiveWeightFunc:callable, matchupDataDir:str="./matchup_data/", writeToFile:bool=True):
     # Loading the data
     pokemonTypes = toolbox.getAllPokemonTypes("{}/gen-{}.json".format(matchupDataDir, generation_number))
@@ -86,36 +98,6 @@ def rateTypesInGen(generation_number:int, offensiveWeightFunc:callable, defensiv
     # Rating the types
     type_ratings = _rateTypes(pokemonTypes, offensiveWeightFunc, defensiveWeightFunc)
 
-    if not writeToFile:
-        return type_ratings
-    
-    # Putting the ratings into html so it's easier to read
-    html = """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Gen {0} Results</title>
-    </head>
-    <body>
-        <h1>Gen {0} Results</h1>
-        <table>
-            <tr>
-                <th>Pokemon Type Name</th>
-                <th>Rating</th>
-            </tr>
-            {1}
-        </table>
-    </body>
-    </html>
-    """
-
-    html_table_data = ""
-    for (name, score) in type_ratings.items():
-        html_table_data += "<tr><td>{}</td><td>{}</td></tr>\n".format(name, score)
-
-    with open("type_results.html", 'w') as file:
-        file.write(html.format(generation_number, html_table_data))
-    file.close()
     return type_ratings
 
 def rateTypesAcrossAllGens(offensiveWeightFunc:callable, defensiveWeightFunc:callable, matchupDataDir:str="./matchup_data/", writeToFile:bool=True):
@@ -133,25 +115,62 @@ def rateTypesAcrossAllGens(offensiveWeightFunc:callable, defensiveWeightFunc:cal
     <html>
     <head>
         <title>Results Across All Generations</title>
+        <script type="text/javascript">
+            window.onload = init;
+            {3}
+        </script>
+        <style>
+            {4}
+        </style>
     </head>
     <body>
         <h1>Results Across All Generations</h1>
-        <h3>Hint: click on the headers to sort</h3>
+        <text>Hint: click on the headers to sort</text>
+        <br>
+        <text>Hint: click on the scores to bring up a tooltip for that type's matchup data</text>
         <table id="resultsTable">
             <tr>
-                <th onclick="sortTable(0)" style="cursor: pointer;">Pokemon Type Name</th>
+                <th onclick="sort(resultsTable, 0)" style="cursor: pointer;">Pokemon Type Name</th>
                 {0}
             </tr>
             {1}
         </table>
-        <script>{2}</script>
+
+        <!-- variables -->
+        <input type="text" hidden="true" id="cursorX" size="3" value="0"/>
+        <input type="text" hidden="true" id="cursorY" size="3" value="0"/>
+        <input type="text" hidden="true" id="elementClickedId" value="none"/>
+        <input type="text" hidden="true" id="prevElementClickedId" value="none"/>
+
+        <div hidden="true" id="matchupsTooltip">
+        <table id="matchupsTooltipTable">
+            <caption id="tooltipTypeName">Type_Name</caption>
+            <tr>
+                <td>
+                    <table id="offensiveMatchups">
+                        <caption>Offensive</caption>
+                    </table>
+                </td>
+                <td>
+                    <table id="defensiveMatchups">
+                        <caption>Defensive</caption>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        </div>
+
+        <script>
+            {2}
+            resultsTable = document.getElementById('resultsTable');
+        </script>
     </body>
     </html>
     """
 
     html_table_headers = ""
     for gen_number_str in output.keys():
-        html_table_headers += "<th onclick=\"sortTable({0})\" style=\"cursor: pointer;\">Gen {0}</th>".format(gen_number_str)
+        html_table_headers += "<th onclick=\"sort(resultsTable, {0})\" style=\"cursor: pointer;\">Gen {0}</th>".format(gen_number_str)
 
     alphabetized_list_of_pokemon_types = []
     for data_set in output.values():
@@ -165,7 +184,8 @@ def rateTypesAcrossAllGens(offensiveWeightFunc:callable, defensiveWeightFunc:cal
                 result = output[gen_number_str][pokemon_type_name]
             except KeyError:
                 result = "Not Introduced"
-            html_table_data += "<td>{}</td>".format(result)
+            html_table_data += """<td id="{0}-gen{1}" onclick="displayMatchupTooltip('{0}-gen{1}')" onmouseleave="undisplayMatchupTooltip()" style="cursor: pointer;">
+            {2}</td>""".format(pokemon_type_name, gen_number_str, result)
         html_table_data += "</tr>"
     
     html_scripts = ""
@@ -173,8 +193,18 @@ def rateTypesAcrossAllGens(offensiveWeightFunc:callable, defensiveWeightFunc:cal
         html_scripts = file.read()
     file.close()
 
+    html_pre_scripts = ""
+    with open("pre_scripts.js") as file:
+        html_pre_scripts = file.read()
+    file.close()
+
+    html_styles = ""
+    with open("styles.css") as file:
+        html_styles = file.read()
+    file.close()
+
     with open("type_results.html", 'w') as file:
-        file.write(html.format(html_table_headers, html_table_data, html_scripts))
+        file.write(html.format(html_table_headers, html_table_data, html_scripts, html_pre_scripts, html_styles))
     file.close()
     return output
 
